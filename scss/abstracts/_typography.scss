@@ -1,0 +1,109 @@
+@use 'variables' as *;
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-variable.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-variable-italic.woff2') format('woff2');
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../fonts/dmsans-regular.woff2') format('woff2');
+    font-weight: var(--weight-regular);
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../fonts/dmsans-semibold.woff2') format('woff2');
+    font-weight: var(--weight-semibold);
+    font-style: normal;
+    font-display: swap;
+}
+
+%H1 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-headline);
+    font-weight: 700;
+    margin-bottom: var(--space-headline);
+    text-transform: uppercase;
+}
+
+%H2 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-headline);
+    font-weight: 700;
+    margin-bottom: var(--space-headline);
+    text-transform: uppercase;
+
+    span {
+        font-weight: 300;
+    }
+}
+
+%H3 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-headline);
+    font-weight: 700;
+    margin-bottom: var(--space-headline);
+}
+
+%TEXT {
+    font-family: var(--font-base);
+    font-size: var(--font-size-default);
+    line-height: var(--line-height-default);
+    font-weight: var(--weight-regular);
+}
+
+%TEXT-SMALL {
+    font-family: var(--font-base);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+}
+
+.h1 {
+    @extend %H1;
+}
+
+.h2 {
+    @extend %H2;
+}
+
+.h3 {
+    @extend %H3;
+}
+
+.text-default {
+    @extend %TEXT;
+}
+
+.text-small {
+    @extend %TEXT-SMALL;
+}
+
+a {
+    cursor: pointer;
+    color: var(--color-text-default);
+    text-decoration: none;
+    font-family: var(--font-base);
+    font-weight: var(--weight-regular);
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: underline;
+    }
+}

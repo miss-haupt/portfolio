@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+%BUTTON-PRIMARY {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--color-text-default);
+    border: 2px solid var(--color-dark-grey);
+    height: 44px;
+    padding: 10px 30px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-dark-grey);
+        color: var(--color-white);
+    }
+}
+
+//ToDo: what happens with very long text inside button : two Lines?
+.button {
+    @extend %BUTTON-PRIMARY;
+}

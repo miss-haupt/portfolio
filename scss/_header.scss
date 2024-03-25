@@ -1,0 +1,32 @@
+@use 'abstracts' as *;
+@use 'base' as *;
+
+.header {
+    position: fixed;
+    height: var(--header-height);
+    padding: 15px;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: var(--z-index-header);
+    transition: all 0.3s ease;
+    mix-blend-mode: difference;
+
+    &__container {
+        @extend %CONTAINER;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        max-height: 100%;
+        text-transform: uppercase;
+
+        &-bold {
+            font-weight: 700;
+        }
+    }
+}

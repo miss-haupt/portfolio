@@ -1,0 +1,119 @@
+@use '../abstracts' as *;
+
+$block: ".about-me";
+
+#{$block} {
+    overflow: clip;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(md) {
+        flex-direction: row;
+    }
+
+    &__col {
+        flex: 1;
+
+        &--image {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: clip;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                mix-blend-mode: difference;
+                background-color: #f7f7f7;
+                z-index: 10;
+                pointer-events: none;
+            }
+
+            @keyframes size {
+                from {
+                    font-variation-settings: 'wght' 100;
+                }
+                to {
+                    font-variation-settings: 'wght' 900;
+                }
+            }
+
+            &::after {
+                content: 'examine me';
+                z-index: 11;
+                font-family: var(--font-heading);
+                color: #f7f7f7;
+                background: transparent;
+                font-size: 200px;
+                font-variation-settings: 'wght' 900;
+                animation: size 1.5s ease infinite;
+                text-transform: uppercase;
+            }
+        }
+
+        &--content {
+            padding: var(--col-section-padding-outer) var(--col-section-padding-inner) var(--col-section-padding-outer) var(--col-section-padding-outer);
+            color: var(--color-black);
+            background-color: var(--color-orange-2);
+            max-width: 50vw;
+
+            @include breakpoint(xl) {
+                padding: var(--col-section-padding-outer) var(--col-section-padding-inner) var(--col-section-padding-outer) var(--col-section-padding-outer);
+            }
+        }
+    }
+
+    &__headline {
+        @extend %H2;
+    }
+
+    &__text {
+        column-count: 1;
+        column-gap: 70px;
+        text-wrap: balance;
+
+        @include breakpoint(xl) {
+            column-count: 2;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        object-fit: cover;
+        object-position: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 100%;
+        min-width: 100%;
+
+        &--2 {
+            --mask-size: 0;
+            margin: auto;
+            cursor: move;
+            -webkit-mask-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/sun.svg);
+            mask-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/sun.svg);
+            -webkit-mask-size: var(--mask-size);
+            mask-size: var(--mask-size);          
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            mask-type: luminance;
+            -webkit-mask-position-x: calc(var(--mouseX) * 1%);
+            -webkit-mask-position-y: calc(var(--mouseY) * 1%);
+            transition: mask-size 0.5s ease;
+        }
+        &--1 {
+            pointer-events: none;
+        }
+    }
+}

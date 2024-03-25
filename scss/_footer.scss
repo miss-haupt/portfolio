@@ -1,0 +1,47 @@
+@use 'abstracts' as *;
+
+.footer {
+    padding: var(--section-padding);
+    color: var(--color-white);
+    background-color: var(--color-black);
+
+    @include breakpoint(md) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__headline {
+        @extend %H2;
+    }
+
+    &__link-list {
+        @include breakpoint(md) {
+            display: flex;
+        }
+    }
+
+    &__link-list-item {
+        padding-bottom: 15px;
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+
+        @include breakpoint(md) {
+            padding-bottom: 0;
+            margin-right: 20px;
+        }
+    }
+
+    &__top,
+    &__bottom {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__bottom {
+        text-align: right;
+    }
+}

@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+$block: ".hero";
+
+#{$block} {
+    overflow: clip;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-black);
+}

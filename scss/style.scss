@@ -1,0 +1,11 @@
+@use 'scss-reset/reset';
+
+// molecules
+@use 'header';
+@use 'navigation';
+@use 'footer';
+
+//sections
+@use 'sections/hero';
+@use 'sections/about-me';
+@use 'sections/grid';

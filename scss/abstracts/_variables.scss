@@ -1,0 +1,97 @@
+@use 'breakpoints' as *;
+
+:root {
+    padding: 0;
+    font-size: 10px;                   // 1rem means now 10px --> better for calcualtion
+
+    --font-base: 'DM Sans';
+    --font-heading: 'Montserrat';
+
+    --weight-regular: 400;
+    --weight-semibold: 600;
+
+    // colors
+    --color-white: #d7d2d2;
+    --color-black: #1d1c1c;
+    --color-very-light-grey: #f2f2f2;
+    --color-light-grey: #D8D8D8;
+    --color-grey: #6E6A69;
+    --color-dark-grey: #333333;
+    --color-very-dark-grey: #404040;
+    --color-medium-grey: #999999;   // for navigation border, in design it is a margin
+
+    --color-orange-1: #fb5401;
+    --color-orange-2: #fa9469;
+    --color-blue-1: #03d484;
+
+    --color-primary: var(--color-blue-1);
+
+    --color-background: var(--color-black);
+    --color-text-default: var(--color-white);
+    --color-border-default: var(--color-very-dark-grey);
+    --color-border-green: var(--color-orange-1);
+    --color-highlight: var(--color-orange-1);
+
+    // shadows
+    --overlay-color: rgba(0, 0, 0, 0.7);
+    --box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+    // font-sizes
+    --font-size-default: 2.1rem;    //21px
+    --font-size-medium: 1.8rem;     //18px;
+    --font-size-small: 1.6rem;      //16px;
+    --font-size-xsmall: 1.1rem;     //11px;
+
+    --font-size-h1: 2.8rem;         //28px;
+    --font-size-h2: 2.4rem;         //24px;
+    --font-size-h3: 2.1rem;         //21px;
+
+    @include breakpoint(md) {
+        --font-size-h1: 5.5rem;     //55px;
+        --font-size-h2: 7rem;       //70px;
+        --font-size-h3: 3rem;       //30px;
+    }
+
+    --font-size-label: var(--font-size-medium);
+    --font-size-figcaption: var(--font-size-xsmall);
+
+    // line-heights
+    --line-height-default: 1.5;     // 32px bei 21px font-size
+    --line-height-medium: 1.4;      // 25.2px bei 18px font-size
+    --line-height-small: 1.3;       // 20.8px bei 16px font-size
+    --line-height-xsmall: 1.25;     // 13.75px bei 11px font-size
+
+    --line-height-headline: 1.2;
+
+    --line-height-label: var(--line-height-medium);
+    --line-height-figcaption: var(--line-height-xsmall);
+
+    //spaces
+    --space-headline: 24px;
+    --space: 20px;
+    --space-big: 60px;
+
+    // heights
+    --height-navigation: 60px;
+    --header-height: 100px;
+
+    // scaffolding
+    --container: 1000px;
+    --container-padding: 20px;
+    --section-padding: var(--_section-padding, 100px);
+
+    --col-section-padding-outer: 100px;
+    --col-section-padding-inner: 70px;
+
+    @include breakpoint(lg) {
+        --container: 1000px;
+    }
+    @include breakpoint(xl) {
+        --container: 1200px;
+    }
+
+    // z-index
+    --z-index-header: 100;
+    --z-index-nav-overlay: 99;
+    --z-index-nav: 101;
+}

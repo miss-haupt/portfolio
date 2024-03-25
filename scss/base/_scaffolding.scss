@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.main {
+    margin: 0 auto;
+    width: 100%;
+}
+
+%CONTAINER {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: var(--container-padding);
+    width: var(--container);
+}

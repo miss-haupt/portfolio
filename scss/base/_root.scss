@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+:root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-white);
+    color: var(--color-text-default);
+    overflow-x: hidden;    
+    font-family: var(--font-base);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-default);
+    line-height: var(--line-height-default);
+    font-style: normal;
+    min-height: 100vh;
+}
+
+::selection {
+    background: var(--color-orange-1);
+    color: var(--color-white);
+}
