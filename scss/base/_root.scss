@@ -9,14 +9,15 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 62.5%;
 }
 
 body {
-    background-color: var(--color-white);
+    background: var(--color-black);
     color: var(--color-text-default);
     overflow-x: hidden;    
-    font-family: var(--font-base);
-    font-weight: var(--weight-regular);
+    font-family: 'DM Sans';
+    font-weight: var(--weight-light);
     font-size: var(--font-size-default);
     line-height: var(--line-height-default);
     font-style: normal;
@@ -24,6 +25,6 @@ body {
 }
 
 ::selection {
-    background: var(--color-orange-1);
+    background: var(--color-black);
     color: var(--color-white);
 }

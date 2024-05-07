@@ -1,6 +1,7 @@
 class Scroll {
     constructor() {
         this.header     = document.querySelector(`.header`);
+        this.backToTop  = document.querySelector(`.back-to-top`);
         this.body       = document.body;
     }
 
@@ -16,6 +17,10 @@ class Scroll {
 
                 this.body.classList.remove('page-is-scrolled');
             }
+        });
+
+        this.backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 }

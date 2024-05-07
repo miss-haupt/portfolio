@@ -1,4 +1,5 @@
 @use '../abstracts' as *;
+@use '../base/button' as *;
 
 $block: ".about-me";
 
@@ -7,25 +8,29 @@ $block: ".about-me";
     position: relative;
     width: 100vw;
     min-height: 100vh;
-    background-color: var(--color-black);
     display: flex;
-    flex-direction: column;
-
-    @include breakpoint(md) {
-        flex-direction: row;
-    }
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
 
     &__col {
         flex: 1;
 
         &--image {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            height: 100vh;
+            position: relative;
+            width: 400px;
             overflow: clip;
+            aspect-ratio: 3 / 4;
+            max-height: 100vh;
 
-            &::before,
+            @keyframes size {
+                from {
+                    font-variation-settings: 'wght' 100;
+                }
+                to {
+                    font-variation-settings: 'wght' 900;
+                }
+            }
             &::after {
                 content: '';
                 position: absolute;
@@ -37,53 +42,154 @@ $block: ".about-me";
                 background-color: #f7f7f7;
                 z-index: 10;
                 pointer-events: none;
-            }
-
-            @keyframes size {
-                from {
-                    font-variation-settings: 'wght' 100;
-                }
-                to {
-                    font-variation-settings: 'wght' 900;
-                }
-            }
-
-            &::after {
-                content: 'examine me';
                 z-index: 11;
-                font-family: var(--font-heading);
-                color: #f7f7f7;
-                background: transparent;
-                font-size: 200px;
-                font-variation-settings: 'wght' 900;
-                animation: size 1.5s ease infinite;
-                text-transform: uppercase;
+                color: var(--color-light-grey);
             }
         }
 
-        &--content {
-            padding: var(--col-section-padding-outer) var(--col-section-padding-inner) var(--col-section-padding-outer) var(--col-section-padding-outer);
+        &--text {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 13;
+            font-family: var(--font-heading);
+            font-weight: var(--weight-semibold);
             color: var(--color-black);
-            background-color: var(--color-orange-2);
-            max-width: 50vw;
+            font-size: 20px;
+            font-variation-settings: 'wght' 900;
+            text-transform: uppercase;
+            --mask-size: 0;
+            margin: auto;
+            cursor: move;
+            -webkit-mask-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/sun.svg);
+            mask-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/sun.svg);
+            -webkit-mask-size: var(--mask-size);
+            mask-size: var(--mask-size);          
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            mask-type: luminance;
+            -webkit-mask-position-x: calc(var(--mouseX) * 1%);
+            -webkit-mask-position-y: calc(var(--mouseY) * 1%);
+            transition: mask-size 0.5s ease;
+            mix-blend-mode: soft-light;
+            filter: contrast(200%);
+            text-align: center;
+            line-height: 1;
+        }
+
+        &--content {
+            max-width: calc(100vw - 20px);
 
             @include breakpoint(xl) {
                 padding: var(--col-section-padding-outer) var(--col-section-padding-inner) var(--col-section-padding-outer) var(--col-section-padding-outer);
+            }
+
+            h3 {
+                @extend %H3;
+
+                text-transform: uppercase;
             }
         }
     }
 
     &__headline {
         @extend %H2;
+        text-align: center;
+        text-align: center;
+        margin-top: calc(var(--font-size-h2) / 2 * -1);
+        position: relative;
+        z-index: 1;
     }
 
     &__text {
-        column-count: 1;
-        column-gap: 70px;
-        text-wrap: balance;
+        .intro {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-        @include breakpoint(xl) {
-            column-count: 2;
+        h3 {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        > div {
+            position: relative;
+            padding-left: 0;
+            padding-right: 50px;
+            padding-bottom: 50px;
+            width: 50%;
+            text-align: right;
+
+            &:nth-of-type(even) {
+                transform: translate(calc(100% - 2px));
+                text-align: left;
+                padding-left: 50px;
+                padding-right: 0;
+
+                &::before {
+                    left: 0;
+                    right: auto;
+                }
+
+                &::after {
+                    left: -4px;
+                }
+
+                .year {
+                    left: -25px;
+                    right: auto;
+                }
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                background-color: var(--color-light-grey);
+                position: absolute;
+            }
+
+            &::before {
+                bottom: 0;
+                width: 2px;
+                top: 5px;
+                left: auto;
+                right: 0;
+            }
+
+            &::after {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                top: 0;
+                left: auto;
+                right: -4px;
+            }
+
+            .year {
+                position: absolute;
+                transform: rotate(90deg);
+                top: 45px;
+                bottom: auto;
+                left: auto;
+                right: -25px;
+                font-size: var(--font-size-small);
+                line-height: 1;
+            }
+
+            .description {
+                font-weight: 300;
+                font-size: var(--font-size-small);
+                span {
+                    display: block;
+                }
+            }
         }
     }
 
@@ -111,9 +217,20 @@ $block: ".about-me";
             -webkit-mask-position-x: calc(var(--mouseX) * 1%);
             -webkit-mask-position-y: calc(var(--mouseY) * 1%);
             transition: mask-size 0.5s ease;
+            z-index: 12;            
+            filter: contrast(120%);
         }
         &--1 {
             pointer-events: none;
         }
+    }
+
+    &__button {
+        position: absolute;
+        right: 10px;
+        bottom: calc((var(--font-size-h2) / 2) - 15px);
+        z-index: 13;
+
+        @extend %BUTTON-PRIMARY;
     }
 }

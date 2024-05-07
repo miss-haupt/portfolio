@@ -2,21 +2,29 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/montserrat-variable.woff2') format('woff2');
+    src: url('./assets/fonts/montserrat-variable.woff2') format('woff2');
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/montserrat-variable-italic.woff2') format('woff2');
+    src: url('./assets/fonts/montserrat-variable-italic.woff2') format('woff2');
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'DM Sans';
-    src: url('../fonts/dmsans-regular.woff2') format('woff2');
+    src: url('./assets/fonts/dmsans-light.woff2') format('woff2');
+    font-weight: var(--weight-light);
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('./assets/fonts/dmsans-regular.woff2') format('woff2');
     font-weight: var(--weight-regular);
     font-style: normal;
     font-display: swap;
@@ -24,7 +32,7 @@
 
 @font-face {
     font-family: 'DM Sans';
-    src: url('../fonts/dmsans-semibold.woff2') format('woff2');
+    src: url('./assets/fonts/dmsans-semibold.woff2') format('woff2');
     font-weight: var(--weight-semibold);
     font-style: normal;
     font-display: swap;
@@ -34,7 +42,7 @@
     font-family: var(--font-heading);
     font-size: var(--font-size-h1);
     line-height: var(--line-height-headline);
-    font-weight: 700;
+    font-weight: var(--weight-semibold);
     margin-bottom: var(--space-headline);
     text-transform: uppercase;
 }
@@ -43,12 +51,11 @@
     font-family: var(--font-heading);
     font-size: var(--font-size-h2);
     line-height: var(--line-height-headline);
-    font-weight: 700;
     margin-bottom: var(--space-headline);
     text-transform: uppercase;
 
     span {
-        font-weight: 300;
+        font-weight: var(--weight-regular);
     }
 }
 
@@ -56,7 +63,6 @@
     font-family: var(--font-heading);
     font-size: var(--font-size-h3);
     line-height: var(--line-height-headline);
-    font-weight: 700;
     margin-bottom: var(--space-headline);
 }
 
@@ -64,12 +70,12 @@
     font-family: var(--font-base);
     font-size: var(--font-size-default);
     line-height: var(--line-height-default);
-    font-weight: var(--weight-regular);
+    font-weight: var(--weight-light);
 }
 
 %TEXT-SMALL {
     font-family: var(--font-base);
-    font-weight: var(--weight-regular);
+    font-weight: var(--weight-light);
     font-size: var(--font-size-small);
     line-height: var(--line-height-small);
 }
@@ -105,5 +111,51 @@ a {
     &:focus,
     &:active {
         text-decoration: underline;
+    }
+}
+
+@keyframes headlineGrowth {
+	0% {
+		font-variation-settings: 'wght' 700, 'wdth' 100, 'slnt' 0;
+	}
+	60% {
+		font-variation-settings: 'wght' 100, 'wdth' 10, 'slnt' 12;
+	}
+	
+	100% {
+		font-variation-settings: 'wght' 600, 'wdth' 100, 'slnt' 0;
+	}
+}
+
+@keyframes headlineShrink {
+	0% {
+		font-variation-settings: 'wght' 100, 'wdth' 10', opsz' 144;
+	}
+	60% {
+		font-variation-settings: 'wght' 700, 'wdth' 100, 'opsz' 8;
+	}
+	
+	100% {
+		font-variation-settings: 'wght' 100, 'wdth' 10, 'opsz' 144;
+	}
+}
+
+.headline-will-animate {
+    font-variation-settings: "wght" 100, 'wdth' 10, 'GRAD' 88;
+	transition: all 1.5s cubic-bezier(.68,-0.55,.27,1.55);
+
+    span {
+        font-variation-settings: "wght" 700, 'wdth' 90;
+        transition: all 1.5s cubic-bezier(.68,-0.55,.27,1.55) 0.3s;
+    }
+
+    &.in-view {        
+        //animation: headlineGrowth 1500ms forwards;
+        font-variation-settings: "wght" 700, 'wdth' 90, 'GRAD' 150;
+
+        span {           
+            //animation: headlineShrink 1500ms forwards 500ms; 
+            font-variation-settings: "wght" 100, 'wdth' 10;
+        }
     }
 }

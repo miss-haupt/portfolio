@@ -2,11 +2,11 @@
 
 :root {
     padding: 0;
-    font-size: 10px;                   // 1rem means now 10px --> better for calcualtion
 
     --font-base: 'DM Sans';
     --font-heading: 'Montserrat';
 
+    --weight-light: 300;
     --weight-regular: 400;
     --weight-semibold: 600;
 
@@ -48,7 +48,7 @@
 
     @include breakpoint(md) {
         --font-size-h1: 5.5rem;     //55px;
-        --font-size-h2: 7rem;       //70px;
+        --font-size-h2: 10rem;       //70px;
         --font-size-h3: 3rem;       //30px;
     }
 
@@ -72,16 +72,15 @@
     --space-big: 60px;
 
     // heights
-    --height-navigation: 60px;
-    --header-height: 100px;
+    --header-height: 50px;
 
     // scaffolding
     --container: 1000px;
     --container-padding: 20px;
     --section-padding: var(--_section-padding, 100px);
 
-    --col-section-padding-outer: 100px;
-    --col-section-padding-inner: 70px;
+    --col-section-padding-outer: 50px;
+    --col-section-padding-inner: 50px;
 
     @include breakpoint(lg) {
         --container: 1000px;

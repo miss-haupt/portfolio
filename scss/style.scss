@@ -5,6 +5,10 @@
 @use 'navigation';
 @use 'footer';
 
+
+// components {
+@use 'components/popup';
+
 //sections
 @use 'sections/hero';
 @use 'sections/about-me';
