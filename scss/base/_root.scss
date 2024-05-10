@@ -16,7 +16,7 @@ body {
     background: var(--color-black);
     color: var(--color-text-default);
     overflow-x: hidden;    
-    font-family: 'DM Sans';
+    font-family: var(--font-base);
     font-weight: var(--weight-light);
     font-size: var(--font-size-default);
     line-height: var(--line-height-default);

@@ -1,0 +1,252 @@
+@use '../abstracts' as *;
+
+.face {
+    margin: 70px auto 30px;
+    max-width: 1000px;
+    width: 500px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    &::after,
+    &::before {
+        content: '';
+        background: var(--color-white);
+        height: 5px;
+        width: 50px;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        z-index: 1;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+
+    &::before {
+        transform: translateX(calc(-50% - 100px));
+    }
+    &::after {
+        transform: translateX(calc(-50% + 100px));
+    }
+
+    &.yes {
+        &::before {
+            transform: translate(calc(-50% - 140px), 8px) rotate(-40deg);
+        }
+        &::after {
+            transform: translate(calc(-50% + 140px), 8px) rotate(40deg);
+        }
+    }
+    &.talk {
+        @keyframes browJumpRight {
+            0% {
+                transform: translate(calc(-50% + 100px), 0);
+            }
+            100% {
+                transform: translate(calc(-50% + 100px), -10px);
+            }
+        }
+        @keyframes browJumpLeft {
+            0% {
+                transform: translate(calc(-50% - 100px), 0);
+            }
+            100% {
+                transform: translate(calc(-50% - 100px), -10px);
+            }
+        }
+
+        &::before {
+            transform: translate(calc(-50% - 100px), 0);
+            animation: browJumpLeft 0.5s infinite;
+        }
+
+        &::after {
+            transform: translate(calc(-50% - 100px), 0);
+            animation: browJumpRight 0.5s infinite;
+        }
+    }
+    &.maybe {
+        &::before {
+            width: 30px;
+            transform: translate(calc(-50% - 130px), 15px) rotate(-35deg);
+        }
+        &::after {
+            width: 30px;
+            transform: translate(calc(-50% + 130px), 15px) rotate(35deg);
+        }
+    }
+    &.no {
+        &::before {
+            width: 25px;
+            transform: translateX(calc(-50% - 35px)) rotate(60deg);
+        }
+        &::after {
+            width: 25px;
+            transform: translateX(calc(-50% + 35px)) rotate(-60deg);
+        }
+    }
+    &.no-shit {
+        &::before {
+            transform: translateX(calc(-50% - 55px)) rotate(45deg);
+        }
+        &::after {
+            transform: translateX(calc(-50% + 55px)) rotate(-45deg);
+        }
+    }
+
+    &__eye {
+        width: 100px;
+        height: 100px;
+        background: var(--color-white);
+        position: absolute;        
+        border-radius: 50%;
+        top: 0;
+        left: 50%;
+        transition: all 0.3s ease;
+
+        &-pupil {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--color-black);            
+            transition: all 0.3s ease;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:not(.yes, .talk, .maybe, .no, .no-shit ) {
+            clip-path: ellipse(50% 25% at 50% 50%);
+        }
+
+        &.maybe {
+            .face__eye-pupil {
+                width: 40px;
+                height: 40px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: var(--color-black);
+                width: 200px;
+                height: 50px; 
+                top: 75px;
+                left: -55px;
+            }
+        }
+
+        &.no {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            top: -25px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: var(--color-black);
+                width: 150px;
+                height: 50px;     
+                transform: rotate(-30deg);  
+                left: -55px;
+            }
+
+            .face__eye-pupil {
+                width: 30px;
+                height: 30px;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 70px);
+            }
+        }
+        &.no-shit {
+            height: 50px;
+            width: 120px;
+            border-radius: 0;
+            clip-path: polygon(0 18%, 100% 57%, 100% 100%, 0% 100%);
+
+            .face__eye-pupil {
+                left: auto;
+                right: -10px;
+                top: -5px;
+                width: 60px;
+                height: 60px;
+                transform: translate(0, 0);
+                clip-path: inset(5px 5px 0 0);
+
+                &--right {
+                    left: -5px;
+                    right: auto;
+                    clip-path: inset(5px 0 0 5px);
+                }
+            }
+        }
+        &.yes {
+            overflow: clip;
+            width: 90px;
+
+            @keyframes scale {
+                0% {                    
+                    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+                }
+                100% {                    
+                    transform: translate(-50%, -50%) rotate(0) scale(2);
+                }
+            }
+
+            &::after {
+                content: '';
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: var(--color-light-grey);
+                border-radius: 50%;
+                opacity: 0.9;
+                box-shadow: 0px 0px 10px 10px var(--color-light-grey);
+            }
+            .face__eye-pupil {
+                width: 30px;
+                height: 30px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(0);
+                animation: scale 1.5s infinite;
+                clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+                z-index: 1;
+            }
+        }
+
+        &--left {
+            transform: translateX(calc(-50% - 100px));
+        }
+        &--right {
+            transform: translateX(calc(-50% + 100px));
+
+            &.no {    
+                &::before {
+                    left: unset;
+                    right: unset;
+                    transform: rotate(30deg);
+                }   
+                &::after {
+                    left: unset;
+                    right: 50px;
+                    transform: rotate(0);
+                }
+            }
+
+            &.no-shit {   
+                clip-path: polygon(0 57%, 100% 18%, 100% 100%, 0% 100%);
+            }
+        }
+    }
+}

@@ -3,13 +3,13 @@ import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 
 // ASSETS
-import imgAboutMe from './assets/images/about-me-default.jpg'
-import imgAboutMeColored from './assets/images/about-me-colored.jpg'
-import videoPorgy from './assets/video/porgy-1.mp4'
+import imgAboutMe from './assets/images/about-me-default-edited.jpg';
+import imgAboutMeColored from './assets/images/about-me-colored.jpg';
+import videoPorgy from './assets/video/porgy-1.mp4';
 
-import { setupCounter } from './counter.js'
 import Navigation from './js/navigation';
 import ExamineOnHover from './js/examine-on-hover';
+import Eyes from './js/eyes';
 import Popup from './js/popup';
 import HeadlineAnimation from './js/headline-animation';
 import Scroll from './js/scroll';
@@ -62,7 +62,7 @@ document.querySelector('#app').innerHTML = `
       <div class="header__container">  
           <nav class="nav js-nav">
             <ul class="nav__list">
-                <li class="nav__list-item"><a href="#" class="nav__link">Home</a></li>
+                <li class="nav__list-item"><a href="#" class="nav__link">Motivation</a></li>
                 <li class="nav__list-item"><a href="#" class="nav__link">Selected Projects</a></li>
                 <li class="nav__list-item"><a href="#" class="nav__link">Random Projects</a></li>
                 <li class="nav__list-item"><a href="#about-me" class="nav__link">CV</a></li>
@@ -139,25 +139,53 @@ document.querySelector('#app').innerHTML = `
     </main>
   <footer class="footer" id="contact">
       <div class="footer__top">
-          <h2 class="footer__headline">${texts.footer.headline}</h2>
-          <ul class="footer__contact">
-              <li class="footer__link-list-item">
-                  Christine Haupt
-              </li>
-              <li class="footer__link-list-item">                
-                  <a href="mailto:stini.haupt@gmail.com" class="footer__link footer__link--mail">stini.haupt@gmail.com</a>
-              </li>
-              <li class="footer__link-list-item">
-                  <a href="instagram/miss_haupt" class="footer__link footer__link--instagram">instagram miss_haupt</a>
-              </li>
-              <li class="footer__link-list-item">
-                  <a href="tel:00491785570196" class="footer__link footer__link--phone">0049 178 55 70 196</a>
-              </li>
-          </ul>
+            <h2 class="footer__headline">${texts.footer.headline}</h2>
+            <div class="face">
+                <div class="face__eye face__eye--left">    
+                    <div class="face__eye-pupil face__eye-pupil--left">
+                    </div>
+                </div>
+                <div class="face__eye face__eye--right">
+                    <div class="face__eye-pupil face__eye-pupil--right">
+                    </div>
+                </div>
+            </div>
+            <div class="footer__zettel-list">
+                <button class="footer__audio-toggle" type="button" title="sound on/off">&#x1F50A;</button>
+
+                <a data-id="yes" class="footer__zettel-list-item" data-text="yes, you're in, christine" href="mailto:stini.haupt@gmail.com?body=yes!">
+                    send christine a sms
+                </a>
+                <a data-id="talk" class="footer__zettel-list-item" data-text="let's have a personal talk" href="mailto:stini.haupt@gmail.com?body=talk!">
+                    send christine a sms
+                </a>
+                <a data-id="maybe" class="footer__zettel-list-item" data-text="maybe baby" href="mailto:stini.haupt@gmail.com?body=maybe!">
+                    send christine a sms
+                </a>
+                <a data-id="no" class="footer__zettel-list-item" data-text="no - no comments" href="mailto:stini.haupt@gmail.com?body=no!">
+                    send christine a sms
+                </a>
+                <a data-id="no-shit" class="footer__zettel-list-item" data-text="no your portfolio is shit" href="mailto:stini.haupt@gmail.com?body=noItsShit!">
+                    send christine a sms
+                </a>
+            </div>
       </div>
-      <div class="footer__bottom">
-          <p class="footer__bottom-copyright">&copy; 2024 Christine Haupt</p>
-      </div>
+    <div class="footer__bottom">
+        <ul class="footer__contact footer__link-list">
+            <li class="footer__link-list-item">
+                &copy; 2024 Christine Haupt
+            </li>
+            <li class="footer__link-list-item">                
+                <a href="mailto:stini.haupt@gmail.com" class="footer__link footer__link--mail">stini.haupt@gmail.com</a>
+            </li>
+            <li class="footer__link-list-item">
+                <a href="https://www.instagram.com/miss_haupt/" target="_blank" class="footer__link footer__link--instagram">instagram miss_haupt</a>
+            </li>
+            <li class="footer__link-list-item">
+                <a href="tel:00491785570196" class="footer__link footer__link--phone">0049 178 55 70 196</a>
+            </li>
+        </ul>
+    </div>
   </footer>
 `
 const init = () => {
@@ -178,6 +206,9 @@ const init = () => {
 
     const headlineAnimation = new HeadlineAnimation();
     headlineAnimation.init();
+
+    const eyes = new Eyes();
+    eyes.init();
 }
 
 window.addEventListener('DOMContentLoaded', () => {

@@ -14,30 +14,6 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'DM Sans';
-    src: url('./assets/fonts/dmsans-light.woff2') format('woff2');
-    font-weight: var(--weight-light);
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'DM Sans';
-    src: url('./assets/fonts/dmsans-regular.woff2') format('woff2');
-    font-weight: var(--weight-regular);
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'DM Sans';
-    src: url('./assets/fonts/dmsans-semibold.woff2') format('woff2');
-    font-weight: var(--weight-semibold);
-    font-style: normal;
-    font-display: swap;
-}
-
 %H1 {
     font-family: var(--font-heading);
     font-size: var(--font-size-h1);
