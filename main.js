@@ -379,6 +379,9 @@ document.querySelector('#app').innerHTML = `
                 <li class="footer__link-list-item">
                     <a href="tel:00491785570196" class="footer__link footer__link--phone">0049 178 55 70 196</a>
                 </li>
+                <li class="footer__link-list-item">
+                    <a href="https://github.com/miss-haupt/portfolio" target="_blank" class="footer__link footer__link--phone">Github</a>
+                </li>
             </ul>
         </div>
     </footer>
