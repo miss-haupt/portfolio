@@ -3,6 +3,56 @@
 .main {
     margin: 0 auto;
     width: 100%;
+    overflow: clip;
+    pointer-events: all;
+    
+    .fullscreen & {
+        pointer-events: none;
+    }
+
+    &__bg-image {
+        position: fixed;
+        // aspect-ratio: 1 / 1;
+        top: 0;
+        z-index: 12;
+        min-width: 100vw;
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        mix-blend-mode: difference;
+        pointer-events: none;
+        opacity: 0;
+
+        @include breakpoint(xl) {            
+            opacity: 0.3;
+        }
+
+        .hide-canvas & {
+            z-index: 12;
+        }
+        .fullscreen & {
+            z-index: 0;
+        }
+    }
+
+    .bg-image {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        max-width: calc(100vw - 100px);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition: all 1.5s ease 0.3s;
+        width: 500px;
+        height: 250px;
+
+        @include breakpoint(xl) {            
+            width: 400px;
+            height: 300px;
+        }
+    }
 }
 
 %CONTAINER {

@@ -20,10 +20,10 @@ class Eyes {
             return;
         }
             
-        this.bindEvents();
+        this.#bindEvents();
     }
 
-    bindEvents() {        
+    #bindEvents() {        
         this.zettels.forEach((zettel) => {            
             zettel.addEventListener('mouseenter', (e) => {
                 e.target.classList.add(`${e.target.dataset.id}`);
@@ -62,12 +62,24 @@ class Eyes {
                     eye.classList.remove(`${e.target.dataset.id}`);
                 })
             });
+            zettel.addEventListener('click', (e) => {
+                if (this.#isTouchDevice) {
+                    e.preventDefault();
+                }
+            });
         })
 
         this.audioToggleBtn.addEventListener('click', (e) => {
             // play/pause audio
             e.target.classList.toggle('sound-is-off');
         });
+    }
+
+    #isTouchDevice() {
+        return 'ontouchstart' in window || 
+               navigator.maxTouchPoints > 0 || 
+               navigator.msMaxTouchPoints > 0 || 
+               window.matchMedia("(pointer: coarse)").matches;
     }
 }
 

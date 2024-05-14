@@ -11,9 +11,10 @@
     z-index: var(--z-index-header);
     transition: all 0.3s ease;
     mix-blend-mode: difference;
+    pointer-events: none;
 
     .page-is-scrolled & {
-        background-color: var(--color-light-grey);
+        // background-color: var(--color-light-grey);
     }
 
     &__container {

@@ -13,6 +13,8 @@
     "vite": "^5.2.0"
   },
   "dependencies": {
-    "scss-reset": "^1.4.2"
+    "gsap": "^3.12.5",
+    "scss-reset": "^1.4.2",
+    "three": "^0.164.1"
   }
 }

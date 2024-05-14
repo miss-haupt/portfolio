@@ -4,17 +4,31 @@
 $block: ".about-me";
 
 #{$block} {
-    overflow: clip;
     position: relative;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
     align-items: center;
+    z-index: 11;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 250px;
+
+    @include breakpoint(xl) {   
+        padding-bottom: 300px;        
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    }
 
     &__col {
         flex: 1;
+
+        @include breakpoint(xl) {   
+            flex: unset;
+        }
 
         &--image {
             position: relative;
@@ -22,6 +36,14 @@ $block: ".about-me";
             overflow: clip;
             aspect-ratio: 3 / 4;
             max-height: 100vh;
+            max-width: calc(100% - 40px);
+
+            @include breakpoint(xl) {   
+                position: sticky;
+                margin: 0 0 0 auto;
+                top: 100px;
+                width: 450px;
+            }
 
             @keyframes size {
                 from {
@@ -84,10 +106,11 @@ $block: ".about-me";
         }
 
         &--content {
-            max-width: calc(100vw - 20px);
+            max-width: calc(100% - 20px);
 
             @include breakpoint(xl) {
-                padding: var(--col-section-padding-outer) var(--col-section-padding-inner) var(--col-section-padding-outer) var(--col-section-padding-outer);
+                max-width: calc(100% - 40px);  
+                width: calc(100% - 500px);         
             }
 
             h3 {
@@ -100,23 +123,61 @@ $block: ".about-me";
 
     &__headline {
         @extend %H2;
-        text-align: center;
-        text-align: center;
-        margin-top: calc(var(--font-size-h2) / 2 * -1);
+
+        text-align: right;
+        margin-top: -10px;
         position: relative;
         z-index: 1;
+        transform: rotate(0);
+        margin-bottom: 100px;
+        pointer-events: none;
+
+        
+        @include breakpoint(xl) {
+            font-size: 17rem;
+            margin-right: -100px;
+            margin-top: 400px;
+            mix-blend-mode: difference;
+        }
+
+        &::before {
+            @include breakpoint(xl) {
+                content: 'hover me...';
+                font-size: var(--font-size-medium);
+                font-weight: 700;
+                text-align: right;
+                position: absolute;
+                background-color: var(--color-light-grey);
+                color: var(--color-black);
+                padding: 10px;
+                mix-blend-mode: difference;
+                right: 50px;
+                bottom: -38px;
+                max-width: 250px;
+            }
+        }
     }
 
     &__text {
         .intro {
             text-align: center;
             margin-bottom: 20px;
+
+            @include breakpoint(xl) {
+                text-align: right;
+                width: 90%;
+            }
         }
 
         h3 {
             width: 100%;
             text-align: center;
             margin-top: 20px;
+
+            @include breakpoint(xl) {
+                text-align: right;
+                width: 90%;
+            }
         }
 
         > div {
@@ -126,6 +187,11 @@ $block: ".about-me";
             padding-bottom: 50px;
             width: 50%;
             text-align: right;
+
+            @include breakpoint(xl) {
+                text-align: right;
+                width: 90%;
+            }
 
             &:nth-of-type(even) {
                 transform: translate(calc(100% - 2px));
@@ -145,6 +211,28 @@ $block: ".about-me";
                 .year {
                     left: -25px;
                     right: auto;
+                }
+
+                @include breakpoint(xl) {    
+                    transform: translate(0);                
+                    padding-left: 0;
+                    padding-right: 50px;
+                    padding-bottom: 50px;
+                    text-align: right;
+
+                    &::before {
+                        left: auto;
+                        right: 0;
+                    }
+        
+                    &::after {
+                        left: auto;
+                    }
+
+                    .year {
+                        left: auto;
+                        right: -50px;
+                    }
                 }
             }
 
@@ -181,13 +269,35 @@ $block: ".about-me";
                 right: -25px;
                 font-size: var(--font-size-small);
                 line-height: 1;
+
+                @include breakpoint(xl) {
+                    right: -50px;
+                }
+            }
+
+            .stuff {
+                text-wrap: balance;
+
+                @include breakpoint(xl) {
+                    width: 50%;
+                    margin-right: 0;
+                    margin-left: auto;
+                }
             }
 
             .description {
                 font-weight: 300;
                 font-size: var(--font-size-small);
+                text-wrap: balance;
+
                 span {
                     display: block;
+                }
+
+                @include breakpoint(xl) {
+                    width: 50%;
+                    margin-right: 0;
+                    margin-left: auto;
                 }
             }
         }
@@ -228,7 +338,7 @@ $block: ".about-me";
     &__button {
         position: absolute;
         right: 10px;
-        bottom: calc((var(--font-size-h2) / 2) - 15px);
+        bottom: calc(var(--font-size-h2) / 2);
         z-index: 13;
 
         @extend %BUTTON-PRIMARY;

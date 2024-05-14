@@ -2,7 +2,8 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('./assets/fonts/montserrat-variable.woff2') format('woff2');
+    // src: url('./assets/fonts/montserrat-variable.woff2') format('woff2');
+    src: url('./assets/fonts/akshar-variable.woff2') format('woff2');
     font-style: normal;
     font-display: swap;
 }
@@ -29,9 +30,12 @@
     line-height: var(--line-height-headline);
     margin-bottom: var(--space-headline);
     text-transform: uppercase;
+    color: var(--color-primary);
+    line-height: 0.8;
 
     span {
         font-weight: var(--weight-regular);
+        display: block;
     }
 }
 
@@ -81,7 +85,7 @@ a {
     color: var(--color-text-default);
     text-decoration: none;
     font-family: var(--font-base);
-    font-weight: var(--weight-regular);
+    font-weight: var(--weight-light);
 
     &:hover,
     &:focus,
@@ -117,12 +121,15 @@ a {
 }
 
 .headline-will-animate {
-    font-variation-settings: "wght" 100, 'wdth' 10, 'GRAD' 88;
+    font-variation-settings: "wght" 300, 'wdth' 10, 'GRAD' 88;
 	transition: all 1.5s cubic-bezier(.68,-0.55,.27,1.55);
 
     span {
         font-variation-settings: "wght" 700, 'wdth' 90;
         transition: all 1.5s cubic-bezier(.68,-0.55,.27,1.55) 0.3s;
+    }
+    &::before {
+        font-variation-settings: "wght" 700, 'wdth' 90, 'GRAD' 150;
     }
 
     &.in-view {        
@@ -131,7 +138,10 @@ a {
 
         span {           
             //animation: headlineShrink 1500ms forwards 500ms; 
-            font-variation-settings: "wght" 100, 'wdth' 10;
+            font-variation-settings: "wght" 300, 'wdth' 10;
+        }
+        &::before {
+            font-variation-settings: "wght" 700, 'wdth' 90, 'GRAD' 150;
         }
     }
 }

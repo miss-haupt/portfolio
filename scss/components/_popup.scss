@@ -4,7 +4,60 @@
 .popup {
     &__content {
         width: 0;
+        max-height: 0;
         overflow: clip;
+        pointer-events: none;
+
+        .link {
+            color: var(--color-black);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: var(--color-black);
+            text-decoration-thickness: 2px;
+            transition: all 0.3s ease;
+            font-weight: 400;
+            
+            &:hover {
+                text-underline-offset: 6px;
+                text-decoration-thickness: 4px;
+            }
+        }
+
+        &-headline {
+            @extend %H3;
+
+            span {
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+        }
+
+        &-image {
+            width: 100%;
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        &-video {
+            width: 100%;
+            margin: 50px auto;
+        }
+
+        &-text {  
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;          
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            p {
+                max-width: 600px;
+            }
+        }
+
+        &-grid {  
+            display: grid;
+        }
     }
 
     &--open .popup__content {
@@ -14,12 +67,41 @@
         bottom: 0;
         top: 0;
         backdrop-filter: blur(10px);
-        padding: 20px;
+        padding: calc(var(--header-height) + 10px) 20px 20px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         width: 100%;
+        max-height: 10000px;
+        pointer-events: all;
+
+        @include breakpoint(md) {
+            padding: 20px;
+        }
+    }
+
+    &--open.fullscreen .popup__content {
+        color: var(--color-black);
+        position: fixed;
+        background: var(--color-light-grey);
+        bottom: 0;
+        top: 0;
+        left: 0;
+        transition: all 0.5s ease;
+        overflow: clip scroll;        
+        display: block;
+
+        &-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    }
+
+    &--open.fullscreen .popup__close {
+        position: sticky;
+        top: 0;
+        z-index: 1;
     }
 
     &__close {

@@ -4,19 +4,45 @@ $block: '.nav';
 
 #{$block} {
     height: 100%;
+    pointer-events: all;
 
     &__list {
         display: flex;
-        gap: 20px;
+        gap: 10px;
+        width: calc(100% - 20px);
         height: 100%;
         align-items: center;
+        justify-content: center;
+
+        @include breakpoint(md) {   
+            width: 768px;
+        }
+        @include breakpoint(xl) {   
+            gap: 20px;
+        }
+
+        &-item {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+
+            @include breakpoint(md) {   
+                flex: none;
+            }
+        }
     }
 
     &__link {
         color: var(--color-light-grey);
+        color: var(--color-light-grey);
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: var(--font-size-xsmall);
+        display: flex;
+        text-align: center;
 
         .page-is-scrolled & {
-            color: var(--color-black);
+            // color: var(--color-black);
         }
     }
 }

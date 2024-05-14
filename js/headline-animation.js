@@ -1,6 +1,6 @@
 class HeadlineAnimation {
     constructor() {
-        this.elements            = document.querySelectorAll(`.about-me__headline, .footer__headline`);
+        this.elements            = document.querySelectorAll(`.about-me__headline, .random-projects__headline, .footer__headline, .project__headline, .motivation__text`);
         this.body                = document.body;
     }
 
@@ -25,6 +25,9 @@ class HeadlineAnimation {
                 }
                 
                 target.classList.add('in-view');
+                if (target.classList.contains('motivation__text')) {
+                    document.querySelector('.main').classList.add('motivation-in-view');
+                }
             })
         };
 

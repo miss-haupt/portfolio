@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.playground {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    mix-blend-mode: difference;    
+    opacity: 1;   
+    transition: opacity 1s ease;
+
+    .hide-canvas & {
+        opacity: 0.8;
+    }
+
+    .motivation-in-view & {        
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
+}
+
+.gsap-marker-start,
+.gsap-marker-scroller-end,
+.gsap-marker-end,
+.gsap-marker-scroller-start {
+    display: none !important;
+    pointer-events: none !important;
+}

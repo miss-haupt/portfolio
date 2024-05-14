@@ -8,7 +8,9 @@
 
     --weight-light: 300;
     --weight-regular: 400;
+    --weight-medium: 500;
     --weight-semibold: 600;
+    --weight-bold: 700;
 
     // colors
     --color-white: #d7d2d2;
@@ -22,9 +24,10 @@
 
     --color-orange-1: #fb5401;
     --color-orange-2: #fa9469;
-    --color-blue-1: #03d484;
+    --color-blue-1: #73e495;
 
     --color-primary: var(--color-blue-1);
+    --color-secondary: var(--color-orange-2);
 
     --color-background: var(--color-black);
     --color-text-default: var(--color-white);
@@ -41,15 +44,17 @@
     --font-size-medium: 1.8rem;     //18px;
     --font-size-small: 1.6rem;      //16px;
     --font-size-xsmall: 1.1rem;     //11px;
+    --font-size-large: 3rem;
 
     --font-size-h1: 2.8rem;         //28px;
-    --font-size-h2: 2.4rem;         //24px;
-    --font-size-h3: 2.1rem;         //21px;
+    --font-size-h2: 9rem;         //24px;
+    --font-size-h3: 3.5rem;         //21px;
 
     @include breakpoint(md) {
         --font-size-h1: 5.5rem;     //55px;
-        --font-size-h2: 10rem;       //70px;
-        --font-size-h3: 3rem;       //30px;
+        --font-size-h2: 9rem;       //70px;
+        --font-size-h3: 5rem;       //30px;
+        --font-size-large: 4.5rem;
     }
 
     --font-size-label: var(--font-size-medium);

@@ -9,8 +9,11 @@
 // components {
 @use 'components/popup';
 @use 'components/face';
+@use 'components/playground';
 
 //sections
+@use 'sections/motivation';
 @use 'sections/hero';
 @use 'sections/about-me';
 @use 'sections/grid';
+@use 'sections/random-projects';

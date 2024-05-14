@@ -1,0 +1,166 @@
+@use '../abstracts' as *;
+
+$block: ".random-projects";
+
+#{$block} {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    padding-bottom: 250px;
+
+    @include breakpoint(xl) {   
+        padding-bottom: 300px;
+    }
+
+    &__content { 
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 10px;
+        top: 100px;
+        pointer-events: none;
+        z-index: 12;
+        mix-blend-mode: difference;
+
+        @include breakpoint(md) {   
+            top: 147px;
+            max-width: 1000px;
+        }
+        
+        @include breakpoint(lg) {   
+            max-width: 1300px;
+        }
+        @include breakpoint(xl) {  
+            top: 197px;
+        }
+    }
+
+    &__headline {
+        @extend %H2;
+
+        text-align: left;
+        margin-bottom: 0;
+        position: relative;
+        font-size: 16vw;
+
+        @include breakpoint(md) {   
+            font-size: 10vw;
+        }
+        @include breakpoint(xl) {
+            font-size: 17rem;
+        }
+    }
+
+    &__text {
+        @extend %H3;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: calc((2 * 160px) + 10px);
+        margin: 50px 0 100px;
+        text-align: center;
+        font-size: var(--font-size-large);
+
+        @include breakpoint(md) {   
+            max-width: calc((3 * 200px) + (2 * 5px));
+            text-align: right;
+        }
+        @include breakpoint(xl) {   
+            max-width: calc((3 * 250px) + (2 * 10px));            
+            margin: 100px 0;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: calc((2 * 160px) + 10px);
+        gap: 10px;
+        position: relative;
+
+        @include breakpoint(md) {   
+            max-width: calc((3 * 200px) + (2 * 10px));
+        }
+        @include breakpoint(lg) {   
+            max-width: calc((4 * 200px) + (3 * 10px));
+        }
+        @include breakpoint(xl) {   
+            max-width: calc((3 * 250px) + (2 * 10px));
+        }
+    }
+
+    &__hint {
+        position: absolute;
+        font-size: var(--font-size-small);
+        top: calc(var(--font-size-small) * -1 - 15px);
+        cursor: default;
+
+        &::before {
+            content: 'i';
+            width: calc(var(--font-size-small) + 5px);
+            height: calc(var(--font-size-small) + 5px);
+            background-color: var(--color-light-grey);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            margin-right: 10px;
+            color: var(--color-black);
+        }
+
+        @include breakpoint(md) {
+            left: 0;
+        }
+    }
+
+    &__video {
+        width: 160px;        
+        height: 160px;
+        aspect-ratio: 1 / 1;
+        overflow: clip;
+        transition-timing-function: ease-out;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        left: calc(var(--pos-x)* 1%);
+        top: calc(var(--pos-y)* 1%);
+        transform: scale(1);
+        transition: transform 0.3s ease;
+        z-index: 1;
+        object-fit: cover;
+
+        @include breakpoint(md) {   
+            width: 200px;        
+            height: 200px;
+        }
+        @include breakpoint(xl) {   
+            width: 250px;        
+            height: 250px;
+        }
+        &:hover {
+            transform: scale(1.5);
+            z-index: 12;
+        }
+    }
+
+    &__description {
+        background-color: var(--color-light-grey);
+        padding: 15px;
+        color: var(--color-black);
+    }
+}

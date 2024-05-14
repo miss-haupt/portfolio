@@ -1,0 +1,68 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+$block: ".motivation";
+
+#{$block} {
+    @extend %CONTAINER;
+
+    position: relative;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 250px;
+
+    @include breakpoint(xl) {   
+        padding-bottom: 300px;
+    }
+
+    &__intro {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    &__text {
+        font-size: var(--font-size-h3);
+        text-align: center;
+        margin-bottom: 50px;
+        max-width: 100%;
+        text-wrap: balance;
+
+        @include breakpoint(md) {
+            max-width: 800px;
+        }
+    }
+
+    &__focus-hint {
+        position: absolute;
+        bottom: 20px;
+        transform: translateY(-60px) rotate(-90deg);
+        padding-left: 20px;
+        font-size: var(--font-size-small);
+        opacity: 0.6;
+
+        &::before {
+            content: '^';
+            transform: rotate(-90deg);
+            display: inline-block
+        }
+    }
+
+    &__button {
+        @extend %BUTTON-DARK;
+
+        margin-bottom: 130px;
+    }
+
+    &__popup-text {
+        @include breakpoint(md) {
+            padding: 100px;
+        }
+    }
+}

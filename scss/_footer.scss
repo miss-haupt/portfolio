@@ -2,33 +2,67 @@
 @use 'base/button' as *;
 
 .footer {
-    padding: var(--section-padding);
+    padding: 0 10px 20px;
     color: var(--color-white);
-    background-color: var(--color-black);
+    z-index: 11;
+    overflow-x: clip;
+    position: relative;
 
     @include breakpoint(md) {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include breakpoint(lg) {       
+        padding: 0 var(--section-padding) var(--section-padding); 
+    }
+    @include breakpoint(xl) {   
+        max-width: 1200px;
     }
 
     &__headline {
         @extend %H2;
 
-        text-align: center;
+        text-align: left;
         text-wrap: balance;
         max-width: 1000px;
-        margin: 0 auto;
+        margin: 0 auto 0 0;
+        position: relative;
+        
+        @include breakpoint(xl) {   
+            max-width: unset;
+            margin: unset;
+            min-width: 400px;
+        }
+
+        &::before {
+            content: 'Play your own song...';
+            font-size: var(--font-size-medium);
+            font-weight: 700;
+            text-align: right;
+            position: absolute;
+            background-color: var(--color-light-grey);
+            color: var(--color-black);
+            padding: 10px;
+            mix-blend-mode: difference;
+            left: 0;
+            bottom: -43px;
+            max-width: 250px;
+        }
     }
 
     &__zettel-list {
         display: flex;
         justify-content: center;
         height: 230px;
+        position: relative;
     }
 
     &__zettel-list-item {
-        width: 50px;
+        width: 40px;
         height: 100%;
         position: relative;
         font-size: 0;
@@ -38,6 +72,10 @@
         cursor: pointer;
         transform: scale(1);
         transition: all 0.3s ease;
+
+        @include breakpoint(md) {   
+            width: 50px;
+        }
 
         &:first-of-type {
             border-style: solid dashed dashed dashed;
@@ -65,10 +103,17 @@
 
     &__audio-toggle {
         position: absolute;
-        //width: 50px;
         height: 50px;
-        left: 50%;
-        transform: translateX(calc(-50% + 170px));
+        right: 15px;
+
+        @include breakpoint(md) {  
+            right: unset; 
+            left: 50%;
+            transform: translateX(calc(-50% + 170px))
+        }
+        @include breakpoint(xl) {   
+            transform: translateX(calc(-50% + 200px))
+        }
         
         @extend %BUTTON-DARK;
 
@@ -92,26 +137,44 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+        @include breakpoint(md) {
+            flex-direction: row;
+        }
     }
 
     &__link-list-item {
-        padding-bottom: 15px;
-
-        &:last-of-type {
-            padding-bottom: 0;
-        }
-
         @include breakpoint(md) {
-            padding-bottom: 0;
             margin-right: 20px;
         }
     }
 
     &__top,
     &__bottom {
-        padding: 15px;
+        padding: 15px 0;
         display: flex;
         flex-direction: column;
+
+        @include breakpoint(md) {
+            padding: 15px;
+        }
+    }
+
+    &__top {        
+        @include breakpoint(xl) {   
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 50px;
+        }
+    }
+
+    &__face-wrapper { 
+        @include breakpoint(xl) {   
+            margin-top: 100px;  
+        }
     }
 
     &__bottom {
