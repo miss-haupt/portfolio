@@ -1,5 +1,4 @@
 import './scss/style.scss'
-import viteLogo from '/vite.svg'
 
 // ASSETS
 import imgAboutMe from './assets/images/about-me-default-edited.jpg';
@@ -88,20 +87,6 @@ const texts = {
 }
 
 document.querySelector('#app').innerHTML = `
-<!-- TODO: REMOVE  
-<div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div> -->
-
   <!-- HEADER -->
   <header class="header">
       <div class="header__container">  
