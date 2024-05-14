@@ -343,4 +343,12 @@ $block: ".about-me";
 
         @extend %BUTTON-PRIMARY;
     }
+
+    .popup--open .popup__content {
+        background: rgba(0, 0, 0, 0.4);
+
+        p {
+            font-size: 14px;
+        }
+    }
 }

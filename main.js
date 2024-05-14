@@ -68,7 +68,7 @@ const texts = {
         "textImage": "We all bleed<br>the same color",
         "popupOpen": "about this",
         "popupClose": "close",
-        "popupContent": "this Grafic is a digital collage, the orignal image is created with an AR-filter, created with a face filter painted in Proceate and created with Microsoft ARSpark. The hover effect is a small web gimic implemented with JavaScript."
+        "popupContent": "What do you see from the outside, and who is really behind it? Don’t we all have tremendous potential when given the opportunity to develop it, with teachers who value and motivate us, or in a group that works together appreciatively?<br>Thoughts regarding the application and the limited spots in the program:<br>What potential lies within me based on the application?<br>How can fair decisions be made with such a large number of applicants?<br>Shouldn’t everyone have the chance for such an education, so that a mad rush and selection process aren’t necessary? Isn’t it time to reform education using this program as an example? Interdisciplinary collaboration for self-development and mutual strengthening?<br>Shouldn’t we create such a program together in Vienna to promote the idea of new collaboration? <br><br><small>This Grafic is a digital collage, the orignal image is created with an AR-filter, created with a face filter painted in Proceate and created with Microsoft ARSpark. The hover effect is a small web gimic implemented with JavaScript.</small>"
     },
     "backToTop": "back to top",
     "footer": {
@@ -251,42 +251,114 @@ document.querySelector('#app').innerHTML = `
             <p class="random-projects__text">The following projects show some small or bigger experiments that try to desrobe me and helped me to learn Software and to start.</p>
             <div class="random-projects__items">
                 <p class="random-projects__hint">${texts.randomProjects.hint}</p>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel1}" type="video/mp4" />
-                </video>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel2}" type="video/mp4" />
-                </video>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel3}" type="video/mp4" />
-                </video>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel4}" type="video/mp4" />
-                </video>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel5}" type="video/mp4" />
-                </video>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel6}" type="video/mp4" />
-                </video>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel7}" type="video/mp4" />
-                </video>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel8}" type="video/mp4" />
-                </video>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel9}" type="video/mp4" />
-                </video>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel10}" type="video/mp4" />
-                </video>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel11}" type="video/mp4" />
-                </video>
-                <video width="150"  height="150" class="random-projects__video video" muted >
-                    <source src="${showReel12}" type="video/mp4" />
-                </video>
+                
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel1}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text">
+                        <p><span>Generative Insects</span> (2022) - Examine how to rebuild insects with generative Patterns</p>
+                    </div>
+                </div>
+
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel2}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text">
+                        <p><span>Touchdesigber Meetup</span> (2023) - Orchestrating TD Meetup to build a community in vienna (hold for six times)</p>
+                    </div>
+                </div>
+
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel3}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text third">
+                        <p><span>Mask</span> (2023) - Experimenting Realtime Face Tracking</p>
+                    </div>
+                </div>
+
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel4}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text fourth">
+                        <p><span>Galaxy</span> (2023) - Using Space Hubble image to create audioreactive visual</p>
+                    </div>
+                </div>
+
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel5}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text">
+                        <p><span>Singing Cat</span> (2022) - Realtime singing cat, image created with DALLE-AI, for movements using Touchdesigner</p>
+                    </div>
+                </div>
+
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel6}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text third">
+                        <p><span>Touchdesigner Experiment</span> (2021) - learning path</p>
+                    </div>
+                </div>
+
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel7}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text">
+                        <p><span>Visualizing Washing Machine</span> (2021) - Learning Experiment for audioreactive Visuals</p>
+                    </div>
+                </div>
+
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel8}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text fourth">
+                        <p><span>Mechanical Insect</span> (2022) - Acryl on Canvas (2 x 2m)</p>
+                    </div>
+                </div>
+
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel9}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text third">
+                        <p><span>Digital Theremin</span> (2023) - first Prototype: using Gestures for Creating Sound in Realtime</p>
+                    </div>
+                </div>
+
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel10}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text">
+                        <p><span>Mapping and audioreactive visuals</span> (2023) - Performance for Rotlicht Festival Opening, Semperdepot - Vienna</p>
+                    </div>
+                </div>
+
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel11}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text">
+                        <p><span>Double me</span> (2022) - Realtime Frame Delay using WebCam and Touchdesigner</p>
+                    </div>
+                </div>
+                
+                <div class="random-projects__wrapper">
+                    <video width="150"  height="150" class="random-projects__video video" muted >
+                        <source src="${showReel12}" type="video/mp4" />
+                    </video>
+                    <div class="random-projects__hover-text third fourth">
+                        <p><span>Hello</span> (2024) - Frame by Frame Animation</p>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="section about-me" id="about-me">
