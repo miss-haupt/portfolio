@@ -8,6 +8,16 @@ import bgGridSquare from './assets/images/grid-square.png';
 import introDiagram from './assets/images/thingsIFocusOn.png';
 import kineticVestDiagram from './assets/images/kinetic-vest/kineticVestTechnicalSketch.png';
 import puppetDiagram from './assets/images/puppet/puppetTechnicalSketch.png';
+import puppetFutureDiagram from './assets/images/puppet/puppetFuture.png';
+import puppetSketch from './assets/images/puppet/puppetSketch.jpg';
+import puppetNomad from './assets/images/puppet/puppetNomad.jpg';
+import puppetTD from './assets/images/puppet/puppetTD.jpg';
+import puppetElet1 from './assets/images/puppet/puppetEletDance1.jpg';
+import puppetElet2 from './assets/images/puppet/puppetEletDance2.jpg';
+import puppetElet3 from './assets/images/puppet/puppetEletDance3.jpg';
+
+import residencyDiagram from './assets/images/residency/digitalDataInsideRoomTechnicalSketch.png';
+import lotAlbumSticker from './assets/images/residency/emm-im-lot-album-sticker-square.jpg';
 
 import showReel1 from './assets/video/randomExperiments/generativeInsect.mp4';
 import showReel2 from './assets/video/randomExperiments/tdMeetupShort.mp4';
@@ -26,8 +36,27 @@ import mouthHEVC from './assets/video/hero/mouth-hevc-safari.mp4';
 import mouthWEBM from './assets/video/hero/mouth-vp9-chrome.webm';
 
 import kineticVestSketch from './assets/video/kineticVestSketch.mp4';
-import videoPorgy from './assets/video/porgy-1.mp4';
-import videoPorgyFlyer from './assets/video/randomExperiments/machineWoman.mp4';
+
+import andreaVezgaDance from './assets/video/projects/andreaVezgaDance.mp4';
+import rehearsalWithSetupLot from './assets/video/projects/rehearsalWithSetupLOt.mp4';
+import residency1 from './assets/video/projects/rehearsalDavidDaphne.mp4';
+import residency2 from './assets/video/projects/rehearsalKinect2.mp4';
+import residency3 from './assets/video/projects/rehearsalMasks.mp4';
+import residency4 from './assets/video/projects/rehearsalSilhouette.mp4';
+import residency5 from './assets/video/projects/rehearsaTests.mp4';
+import residency6 from './assets/video/projects/residencyLotFlyer.mp4';
+import residency7 from './assets/video/projects/rehearsalAriane.mp4';
+import residency8 from './assets/video/projects/rehearsalOliver.mp4';
+import residency9 from './assets/video/projects/residencyUiTest.mp4';
+import residencyPuppet from './assets/video/projects/residencyPuppet.mp4';
+import residencyTouchDesigner from './assets/video/projects/residencyUiTest_2.mp4';
+import liveAlt from './assets/video/projects/liveAlt.mp4';
+import herbstfest from './assets/video/projects/herbstfest.mp4';
+
+import videoPorgy from './assets/video/projects/porgy-1.mp4';
+import videoPorgy2 from './assets/video/projects/porgy-2.mp4';
+import videoPorgy3 from './assets/video/projects/porgy-3.mp4';
+import puppetExplain from './assets/video/projects/puppetExplain.mp4';
 
 import Navigation from './js/navigation';
 import ExamineOnHover from './js/examine-on-hover';
@@ -161,11 +190,6 @@ document.querySelector('#app').innerHTML = `
               audioreactive visualization (why, examples, shows) 10examples small videos of my visuals + userInterface for REALTIME control
               importance of the shows to use the room 
               artificial insects (theme )
-
-              MOTIVATION:
-              why? where do i want to go? relation to s.th.
-
-              CV
           -->
             <div class="project__bg-image bg-image" style="background-image: url(${bgGrid});"></div>
             <div class="project__tiles">                
@@ -209,34 +233,127 @@ document.querySelector('#app').innerHTML = `
                         <div class="popup__content-inner">
                             <button class="popup__close project__popup-close">${texts.aboutMe.popupClose}</button>
                             <div class="project__popup-text popup__content-text">
-                            <h3 class="popup__content-headline"><span>“artificial” Fashion</span> – What if, what we wear reacts to our counterparts?</h3>
-                            <p>Based on the <a href="#abstractFocus" class="link">diagram</a> in the beginning I tried to combine different layers in a wearable sculpture, that can be performed with projections.
-                            With the goal to create a space that inspires, motivates and captures.
-                            </p>
-                            <p>
-                            What consequences could such a thing have? <br>
-                            Could it reduce screen time on smartphones and bring the importance of human interaction back to the forefront?<br>
-                            For me 'Artificial' fashion is an experiment that is exciting to explore to see what questions arise as a result.
-                            </p>
-                            <p></p>
+                            <h3 class="popup__content-headline"><span>Puppet controls</span> – do you control the technology or does the technology control you?</h3>
+                            <p>Puppets Controls is a rigged 3D Puppet that reacts in Realtime to the user. It was performed with Live Musicians and a Je.Jesch as dancer in January 2024 at Porgy and Bess (strenge Kammer) in Vienna.</p>
+                            <br>
+                            <p>The Dancer brings the Puppet alive. The idea is, in addition to the demand for technical implementation, the critical examination between humans and machines.  Akin to the themes explored in the movie Metropolis, focusing on the relationship between humans and machines, the contradiction that today's society is heavily influenced by, or dependent on, technological development. Ultimately, however, it is humanity that drives the advancements. </p>
+                            <br>
+                            <p>Technically, this Project is an advancement of the results of the residency, see project "Digital Data inside Physical Space". Below is the setup abstracted:</p>
                             <img class="project__popup-image popup__content-image" src="${puppetDiagram}" alt="technical sketch of kinetic vest" loading="lazy"/>
-                            <video width="250"  height="250" class="project__popup-video popup__content-video video-autoplay" playsinline muted loop>
-                                <source src="${kineticVestSketch}" type="video/mp4" />
+                            <p><strong>Workflow</strong> - from sketch over scultping to ready Project:</p>
+                            <div class="popup__content-grid no-margin">                         
+                                <img src="${puppetSketch}" alt="album relase party" loading="lazy"/>
+                                <img src="${puppetNomad}" alt="album relase party" loading="lazy"/>
+                                <img src="${puppetTD}" alt="album relase party" loading="lazy"/>
+                            </div>                            
+                            <video class="project__popup-video popup__content-video" controls>
+                                <source src="${puppetExplain}" type="video/mp4" />
                             </video>
-                        </div>                        </div>
+
+                            <p><strong>Result and impressions</strong> from the performance:</p>
+                            <div class="popup__content-grid no-margin-top">                              
+                                <video width="250"  height="250" class="project__popup-video popup__content-video" controls>
+                                    <source src="${videoPorgy}" type="video/mp4" />
+                                </video>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video" controls>
+                                    <source src="${videoPorgy2}" type="video/mp4" />
+                                </video>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video" controls>
+                                    <source src="${videoPorgy3}" type="video/mp4" />
+                                </video>
+                                <img src="${puppetElet1}" alt="album relase party" loading="lazy"/>
+                                <img src="${puppetElet2}" alt="album relase party" loading="lazy"/>
+                                <img src="${puppetElet3}" alt="album relase party" loading="lazy"/>
+                            </div>
+
+                            <p><strong>Future ideas</strong> further development (WIP):</p>
+                            <p>To further develop the project, it would be interesting to expand the setup with additional data input and play with the projection in space, so that the puppet appears as if it's in the room. For this, I would like to experiment with two possibilities: the Pepper's Ghost effect and using multiple mosquito nets. As follows:</p>
+                            <img class="project__popup-image popup__content-image" src="${puppetFutureDiagram}" alt="technical sketch of kinetic vest" loading="lazy"/>
+                        </div>
+                        </div>
                     </div>
                 </div>
                 <div class="project__tile project__tile-3 popup fullscreen">
                     <h2 class="project__headline">Digital <span>Data inside</span> physical <span>space</span></h2>
                     <button class="project__button popup__button" type="button" title="show details on click">        
                         <video width="250"  height="250" class="video" muted>
-                            <source src="${videoPorgy}" type="video/mp4" />
+                            <source src="${residencyPuppet}" type="video/mp4" />
                         </video>
                     </button>
                     <div class="popup__content project__popup-content"> 
                         <div class="popup__content-inner">
                             <button class="popup__close project__popup-close">${texts.aboutMe.popupClose}</button>
-                            <p class="project__popup-text">${texts.intro.fullMotivation}</p>
+                            <div class="project__popup-text popup__content-text">
+                            <h3 class="popup__content-headline">Digital <span>Data inside</span> physical <span>space</span></h3>
+                            <p>During a 10-Day Residency there was the Chance to Experiment, Strengthen the Community and explore to work with other disciplines, like Dancers
+                            </p>
+                            <p>The residency was conducted by the three of us in our small collective (<a class="link" href="https://www.instagram.com/exmachinismusicae/" target="_blank" alt="instagram of EMM">ExMachinisMusicae</a>): Alejo and Haruki, the musicians who create experimental live music and worked on both the sounds themselves and a spatial sound setup. We invited 13 artists: musicians, and dancers. I took on the visual component.
+                            So, my task was to take audio and movement as input data and visualize this as digital output, incorporating and utilizing the space and available hardware.                            </p>
+                            
+                            <p>From this task, the central question emerged: <strong>How can I utilize the space to visually expand the digital content along with dance and music?</strong> My approach was as follows:
+                            </p>
+
+                            <img class="project__popup-image popup__content-image" src="${residencyDiagram}" alt="technical sketch of kinetic vest" loading="lazy"/>
+                            <p>The results of these ten days were presented in a one-hour performance, in which all the participating artists took part. The outcome was not only the successful promotion of interdisciplinary work but also an experimentally interesting show and many new learnings.
+                                It took part on the 11th of August 2023 at the Lot in Vienna.
+                            </p>
+                            <div class="popup__content-grid">
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${residencyPuppet}" type="video/mp4" />
+                                </video>                                
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${andreaVezgaDance}" type="video/mp4" />
+                                </video>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${rehearsalWithSetupLot}" type="video/mp4" />
+                                </video>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${residency1}" type="video/mp4" />
+                                </video>                                
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${residency2}" type="video/mp4" />
+                                </video>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${residency3}" type="video/mp4" />
+                                </video>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${residency4}" type="video/mp4" />
+                                </video>                                
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${residency5}" type="video/mp4" />
+                                </video>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${residency8}" type="video/mp4" />
+                                </video>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${residency7}" type="video/mp4" />
+                                </video>                                
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${residency6}" type="video/mp4" />
+                                </video>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                    <source src="${residency9}" type="video/mp4" />
+                                </video>
+                            </div>
+
+                            <p>In the following video you can see the different scenes and the UI in TouchDesigner
+                            </p>
+                            <video class="project__popup-video popup__content-video" controls>
+                                <source src="${residencyTouchDesigner}" type="video/mp4" />
+                            </video>
+
+                            <p>We founded our collective in 2022. Our goal is to continue developing ourselves, to experiment within the group, and to promote community. In September, we have another residency in the Austrian Alps, where we will focus on how we can translate the nature and regional environment of Vienna into sound and visualization. As well as the critical examination of humans, nature, and technology, taking into account current societal developments. We expect the result to be a performance and interactive installations. Besides the residency, we have organized other events. Here are some impressions of them:</p>
+                            
+                            <div class="popup__content-grid">                              
+                                <video width="250"  height="250" class="project__popup-video popup__content-video" controls>
+                                    <source src="${liveAlt}" type="video/mp4" />
+                                </video>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video" controls>
+                                    <source src="${herbstfest}" type="video/mp4" />
+                                </video>
+                                <img src="${lotAlbumSticker}" alt="album relase party" loading="lazy"/>
+                            </div>
+                        
                         </div>
                     </div>
                 </div>
@@ -355,6 +472,8 @@ document.querySelector('#app').innerHTML = `
                     <video width="150"  height="150" class="random-projects__video video" muted >
                         <source src="${showReel12}" type="video/mp4" />
                     </video>
+                    <button class="video__toggle-audio" type="button">test</button>
+
                     <div class="random-projects__hover-text third fourth">
                         <p><span>Hello</span> (2024) - Frame by Frame Animation</p>
                     </div>

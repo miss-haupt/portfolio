@@ -23,6 +23,7 @@ class Video {
             video.addEventListener('mouseleave', (e) => {
                 e.target.pause();
             });
+            // select next sibling
             const audioToggleBtn = video.querySelector('.video__toggle-audio');
             if (audioToggleBtn) {
                 audioToggleBtn.addEventListener('click', (e) => {
