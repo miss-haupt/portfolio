@@ -206,7 +206,7 @@ document.querySelector('#app').innerHTML = `
                         <div class="popup__content-inner">
                             <button class="popup__close project__popup-close">${texts.aboutMe.popupClose}</button>
                             <div class="project__popup-text popup__content-text">
-                                <h3 class="popup__content-headline"><span>“artificial” Fashion</span> – What if, what we wear reacts to our counterparts?</h3>
+                                <h3 class="popup__content-headline"><span>“artificial” Fashion</span> – What if, our clothes react to the people around us?</h3>
                                 <p>Based on the <a href="#abstractFocus" class="link">diagram</a> in the beginning I tried to combine different layers in a wearable sculpture, that can be performed with projections.
                                 With the goal to create a space that inspires, motivates and captures.
                                 </p>
@@ -245,7 +245,7 @@ document.querySelector('#app').innerHTML = `
                         <div class="popup__content-inner">
                             <button class="popup__close project__popup-close">${texts.aboutMe.popupClose}</button>
                             <div class="project__popup-text popup__content-text">
-                            <h3 class="popup__content-headline"><span>Puppet controls</span> – do you control the technology or does the technology control you?</h3>
+                            <h3 class="popup__content-headline"><span>Puppet controls</span> – do you control technology or does technology control you?</h3>
                             <p>Puppets Controls is a rigged 3D Puppet that reacts in Realtime to the user. It was performed with Live Musicians and a Je.Jesch as dancer in January 2024 at Porgy and Bess (strenge Kammer) in Vienna.</p>
                             <br>
                             <p>The Dancer brings the Puppet alive. The idea is, in addition to the demand for technical implementation, the critical examination between humans and machines.  Akin to the themes explored in the movie Metropolis, focusing on the relationship between humans and machines, the contradiction that today's society is heavily influenced by, or dependent on, technological development. Ultimately, however, it is humanity that drives the advancements. </p>
