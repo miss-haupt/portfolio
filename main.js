@@ -66,11 +66,7 @@ import showReel10 from './assets/video/randomExperiments/rotlicht.mp4';
 import showReel11 from './assets/video/randomExperiments/double.mp4';
 import showReel12 from './assets/video/randomExperiments/lifePleasures.mp4';
 
-import mouthHEVC from './assets/video/hero/mouth-hevc-safari.mp4';
-import mouthWEBM from './assets/video/hero/mouth-vp9-chrome.webm';
-
 import kineticVestSketch from './assets/video/kineticVestSketch.mp4';
-
 import andreaVezgaDance from './assets/video/projects/andreaVezgaDance.mp4';
 import rehearsalWithSetupLot from './assets/video/projects/rehearsalWithSetupLOt.mp4';
 import residency1 from './assets/video/projects/rehearsalDavidDaphne.mp4';
@@ -172,31 +168,9 @@ document.querySelector('#app').innerHTML = `
   <div class="main__bg-image" style="background-image: url(${bgGridSquare});"></div>
     <div id="container"></div>
         <canvas class="playground"></canvas>
-        <div class="hero__video-wrapper">
-            <video class="hero__video hero__video--top" muted playsinline >
-                <source
-                    src="${mouthHEVC}"
-                    type="video/mp4; codec=hvc1"
-                >
-                <source
-                    src="${mouthWEBM}"
-                    type="video/webm"
-                >
-            </video> 
-        </div>
         <section class="section hero">
             <div class="hero__overlay"></div>
             <h1 class="hero__headline" id="heroHeadline">${texts.heroHeadline}</h1>
-            <video class="hero__video" muted playsinline >
-                <source
-                    src="${mouthHEVC}"
-                    type="video/mp4; codec=hvc1"
-                >
-                <source
-                    src="${mouthWEBM}"
-                    type="video/webm"
-                >
-            </video> 
             <h2 class="hero__headline-hello hide">${texts.heroHeadlineHello}</h1>
         </section>
         <section class="section motivation" id="motivation">
