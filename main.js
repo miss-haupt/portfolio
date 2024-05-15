@@ -7,6 +7,9 @@ import bgGrid from './assets/images/grid.png';
 import bgGridSquare from './assets/images/grid-square.png';
 import introDiagram from './assets/images/thingsIFocusOn.png';
 import kineticVestDiagram from './assets/images/kinetic-vest/kineticVestTechnicalSketch.png';
+import vestElectronic from './assets/images/kinetic-vest/vestElectronic.jpg';
+import vestMaterial from './assets/images/kinetic-vest/vestMaterial.jpg';
+
 import puppetDiagram from './assets/images/puppet/puppetTechnicalSketch.png';
 import puppetFutureDiagram from './assets/images/puppet/puppetFuture.png';
 import puppetSketch from './assets/images/puppet/puppetSketch.jpg';
@@ -18,6 +21,37 @@ import puppetElet3 from './assets/images/puppet/puppetEletDance3.jpg';
 
 import residencyDiagram from './assets/images/residency/digitalDataInsideRoomTechnicalSketch.png';
 import lotAlbumSticker from './assets/images/residency/emm-im-lot-album-sticker-square.jpg';
+
+import poster1 from './assets/images/poster/poster1.jpg';
+import poster2 from './assets/images/poster/poster2.jpg';
+import poster3 from './assets/images/poster/poster3.jpg';
+import poster4 from './assets/images/poster/poster4.jpg';
+import poster5 from './assets/images/poster/poster5.jpg';
+import poster6 from './assets/images/poster/poster6.jpg';
+import poster7 from './assets/images/poster/poster7.jpg';
+import poster8 from './assets/images/poster/poster8.jpg';
+import poster9 from './assets/images/poster/poster9.jpg';
+import poster10 from './assets/images/poster/poster10.jpg';
+import poster11 from './assets/images/poster/poster11.jpg';
+import poster12 from './assets/images/poster/poster12.jpg';
+import poster13 from './assets/images/poster/poster13.jpg';
+import poster14 from './assets/images/poster/poster14.jpg';
+import poster15 from './assets/images/poster/poster15.jpg';
+import poster16 from './assets/images/poster/poster16.jpg';
+import poster17 from './assets/images/poster/poster17.jpg';
+import poster18 from './assets/images/poster/poster18.jpg';
+import posterRandomProject1 from './assets/images/poster/posterRandomProject1.jpg';
+import posterRandomProject2 from './assets/images/poster/posterRandomProject2.jpg';
+import posterRandomProject3 from './assets/images/poster/posterRandomProject3.jpg';
+import posterRandomProject4 from './assets/images/poster/posterRandomProject4.jpg';
+import posterRandomProject5 from './assets/images/poster/posterRandomProject5.jpg';
+import posterRandomProject6 from './assets/images/poster/posterRandomProject6.jpg';
+import posterRandomProject7 from './assets/images/poster/posterRandomProject7.jpg';
+import posterRandomProject8 from './assets/images/poster/posterRandomProject8.jpg';
+import posterRandomProject9 from './assets/images/poster/posterRandomProject9.jpg';
+import posterRandomProject10 from './assets/images/poster/posterRandomProject10.jpg';
+import posterRandomProject11 from './assets/images/poster/posterRandomProject11.jpg';
+import posterRandomProject12 from './assets/images/poster/posterRandomProject12.jpg';
 
 import showReel1 from './assets/video/randomExperiments/generativeInsect.mp4';
 import showReel2 from './assets/video/randomExperiments/tdMeetupShort.mp4';
@@ -57,6 +91,9 @@ import videoPorgy from './assets/video/projects/porgy-1.mp4';
 import videoPorgy2 from './assets/video/projects/porgy-2.mp4';
 import videoPorgy3 from './assets/video/projects/porgy-3.mp4';
 import puppetExplain from './assets/video/projects/puppetExplain.mp4';
+import vestPreview from './assets/video/projects/vestPreview.mp4';
+import vestExplained from './assets/video/projects/vestExplained.mp4';
+import vestVideo from './assets/video/projects/vestVideo.mp4';
 
 import Navigation from './js/navigation';
 import ExamineOnHover from './js/examine-on-hover';
@@ -183,21 +220,13 @@ document.querySelector('#app').innerHTML = `
         </section>
 
       <section id="selected-projects" class="section project project--grid-1 project--pupppet-dance" id="puppet-dance">
-          <!-- 
-              PROJECTS:
-              interactive systems (puppet dance, dancing alien (allien under water, allien in the sky), kinetic scultpure)
-              digital theremin, face and body tracking EXAMPLE???
-              audioreactive visualization (why, examples, shows) 10examples small videos of my visuals + userInterface for REALTIME control
-              importance of the shows to use the room 
-              artificial insects (theme )
-          -->
             <div class="project__bg-image bg-image" style="background-image: url(${bgGrid});"></div>
             <div class="project__tiles">                
                 <div class="project__tile project__tile-1 popup fullscreen">
                     <h2 class="project__headline">Artificial <span>fashion</span></h2>
                     <button class="project__button popup__button" type="button" title="show details on click">        
                         <video width="250"  height="250" class="video" muted>
-                            <source src="${videoPorgy}" type="video/mp4" />
+                            <source src="${vestPreview}" type="video/mp4" />
                         </video>
                     </button>
                     <div class="popup__content project__popup-content"> 
@@ -215,8 +244,18 @@ document.querySelector('#app').innerHTML = `
                                 </p>
                                 <p></p>
                                 <img class="project__popup-image popup__content-image" src="${kineticVestDiagram}" alt="technical sketch of kinetic vest" loading="lazy"/>
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video-autoplay" playsinline muted loop>
-                                    <source src="${kineticVestSketch}" type="video/mp4" />
+                                <div class="popup__content-grid no-margin">                              
+                                    <video width="250"  height="250" class="project__popup-video popup__content-video video" loop muted>
+                                        <source src="${kineticVestSketch}" type="video/mp4" />
+                                    </video>                                    
+                                    <img src="${vestMaterial}" alt="vest material" loading="lazy"/>
+                                    <img src="${vestElectronic}" alt="vest electronic" loading="lazy"/>
+                                </div>                         
+                                <video class="project__popup-video popup__content-video" poster="${poster1}" preload="none" controls>
+                                    <source src="${vestVideo}" type="video/mp4" />
+                                </video>                       
+                                <video class="project__popup-video popup__content-video" poster="${poster2}" preload="none" controls>
+                                    <source src="${vestExplained}" type="video/mp4" />
                                 </video>
                             </div>
                         </div>
@@ -246,19 +285,19 @@ document.querySelector('#app').innerHTML = `
                                 <img src="${puppetNomad}" alt="album relase party" loading="lazy"/>
                                 <img src="${puppetTD}" alt="album relase party" loading="lazy"/>
                             </div>                            
-                            <video class="project__popup-video popup__content-video" controls>
+                            <video class="project__popup-video popup__content-video" poster="${poster3}" preload="none" controls>
                                 <source src="${puppetExplain}" type="video/mp4" />
                             </video>
 
                             <p><strong>Result and impressions</strong> from the performance:</p>
                             <div class="popup__content-grid no-margin-top">                              
-                                <video width="250"  height="250" class="project__popup-video popup__content-video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video" poster="${poster4}" preload="none" controls>
                                     <source src="${videoPorgy}" type="video/mp4" />
                                 </video>
-                                <video width="250"  height="250" class="project__popup-video popup__content-video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video" poster="${poster5}" preload="none" controls>
                                     <source src="${videoPorgy2}" type="video/mp4" />
                                 </video>
-                                <video width="250"  height="250" class="project__popup-video popup__content-video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video" poster="${poster6}" preload="none" controls>
                                     <source src="${videoPorgy3}" type="video/mp4" />
                                 </video>
                                 <img src="${puppetElet1}" alt="album relase party" loading="lazy"/>
@@ -298,57 +337,58 @@ document.querySelector('#app').innerHTML = `
                                 It took part on the 11th of August 2023 at the Lot in Vienna.
                             </p>
                             <div class="popup__content-grid">
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${poster7}" preload="none" controls>
                                     <source src="${residencyPuppet}" type="video/mp4" />
                                 </video>                                
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${poster8}" preload="none" controls>
                                     <source src="${andreaVezgaDance}" type="video/mp4" />
                                 </video>
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${poster9}" preload="none" controls>
                                     <source src="${rehearsalWithSetupLot}" type="video/mp4" />
                                 </video>
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${poster10}" preload="none" controls>
                                     <source src="${residency1}" type="video/mp4" />
                                 </video>                                
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${poster11}" preload="none" controls>
                                     <source src="${residency2}" type="video/mp4" />
                                 </video>
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${poster12}" preload="none" controls>
                                     <source src="${residency3}" type="video/mp4" />
                                 </video>
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                <!--
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${posterRandomProject1}" preload="none" controls>
                                     <source src="${residency4}" type="video/mp4" />
                                 </video>                                
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${posterRandomProject1}" preload="none" controls>
                                     <source src="${residency5}" type="video/mp4" />
                                 </video>
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${posterRandomProject1}" preload="none" controls>
                                     <source src="${residency8}" type="video/mp4" />
-                                </video>
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                </video> -->
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${poster13}" preload="none" controls>
                                     <source src="${residency7}" type="video/mp4" />
                                 </video>                                
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${poster14}" preload="none" controls>
                                     <source src="${residency6}" type="video/mp4" />
                                 </video>
-                                <video width="250"  height="250" class="project__popup-video popup__content-video video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${poster15}" preload="none" controls>
                                     <source src="${residency9}" type="video/mp4" />
                                 </video>
                             </div>
 
                             <p>In the following video you can see the different scenes and the UI in TouchDesigner
                             </p>
-                            <video class="project__popup-video popup__content-video" controls>
+                            <video class="project__popup-video popup__content-video" poster="${poster16}" preload="none" controls>
                                 <source src="${residencyTouchDesigner}" type="video/mp4" />
                             </video>
 
                             <p>We founded our collective in 2022. Our goal is to continue developing ourselves, to experiment within the group, and to promote community. In September, we have another residency in the Austrian Alps, where we will focus on how we can translate the nature and regional environment of Vienna into sound and visualization. As well as the critical examination of humans, nature, and technology, taking into account current societal developments. We expect the result to be a performance and interactive installations. Besides the residency, we have organized other events. Here are some impressions of them:</p>
                             
                             <div class="popup__content-grid">                              
-                                <video width="250"  height="250" class="project__popup-video popup__content-video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video" poster="${poster17}" preload="none" controls>
                                     <source src="${liveAlt}" type="video/mp4" />
                                 </video>
-                                <video width="250"  height="250" class="project__popup-video popup__content-video" controls>
+                                <video width="250"  height="250" class="project__popup-video popup__content-video" poster="${poster18}" preload="none" controls>
                                     <source src="${herbstfest}" type="video/mp4" />
                                 </video>
                                 <img src="${lotAlbumSticker}" alt="album relase party" loading="lazy"/>
@@ -370,7 +410,7 @@ document.querySelector('#app').innerHTML = `
                 <p class="random-projects__hint">${texts.randomProjects.hint}</p>
                 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject1}" preload="none" controls>
                         <source src="${showReel1}" type="video/mp4" />
                     </video>
                     <div class="random-projects__hover-text">
@@ -379,7 +419,7 @@ document.querySelector('#app').innerHTML = `
                 </div>
 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject2}" preload="none" controls>
                         <source src="${showReel2}" type="video/mp4" />
                     </video>
                     <div class="random-projects__hover-text">
@@ -388,7 +428,7 @@ document.querySelector('#app').innerHTML = `
                 </div>
 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject3}" preload="none" controls>
                         <source src="${showReel3}" type="video/mp4" />
                     </video>
                     <div class="random-projects__hover-text third">
@@ -397,7 +437,7 @@ document.querySelector('#app').innerHTML = `
                 </div>
 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject4}" preload="none" controls>
                         <source src="${showReel4}" type="video/mp4" />
                     </video>
                     <div class="random-projects__hover-text fourth">
@@ -406,7 +446,7 @@ document.querySelector('#app').innerHTML = `
                 </div>
 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject5}" preload="none" controls>
                         <source src="${showReel5}" type="video/mp4" />
                     </video>
                     <div class="random-projects__hover-text">
@@ -415,7 +455,7 @@ document.querySelector('#app').innerHTML = `
                 </div>
 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject6}" preload="none" controls>
                         <source src="${showReel6}" type="video/mp4" />
                     </video>
                     <div class="random-projects__hover-text third">
@@ -424,7 +464,7 @@ document.querySelector('#app').innerHTML = `
                 </div>
 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject7}" preload="none" controls>
                         <source src="${showReel7}" type="video/mp4" />
                     </video>
                     <div class="random-projects__hover-text">
@@ -433,7 +473,7 @@ document.querySelector('#app').innerHTML = `
                 </div>
 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject8}" preload="none" controls>
                         <source src="${showReel8}" type="video/mp4" />
                     </video>
                     <div class="random-projects__hover-text fourth">
@@ -442,7 +482,7 @@ document.querySelector('#app').innerHTML = `
                 </div>
 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject9}" preload="none" controls>
                         <source src="${showReel9}" type="video/mp4" />
                     </video>
                     <div class="random-projects__hover-text third">
@@ -451,7 +491,7 @@ document.querySelector('#app').innerHTML = `
                 </div>
 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject10}" preload="none" controls>
                         <source src="${showReel10}" type="video/mp4" />
                     </video>
                     <div class="random-projects__hover-text">
@@ -460,7 +500,7 @@ document.querySelector('#app').innerHTML = `
                 </div>
 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject11}" preload="none" controls>
                         <source src="${showReel11}" type="video/mp4" />
                     </video>
                     <div class="random-projects__hover-text">
@@ -469,11 +509,9 @@ document.querySelector('#app').innerHTML = `
                 </div>
                 
                 <div class="random-projects__wrapper">
-                    <video width="150"  height="150" class="random-projects__video video" muted >
+                    <video width="150"  height="150" class="random-projects__video" poster="${posterRandomProject12}" preload="none" controls>
                         <source src="${showReel12}" type="video/mp4" />
                     </video>
-                    <button class="video__toggle-audio" type="button">test</button>
-
                     <div class="random-projects__hover-text third fourth">
                         <p><span>Hello</span> (2024) - Frame by Frame Animation</p>
                     </div>

@@ -12,7 +12,6 @@ $block: ".random-projects";
     z-index: 11;
     margin-left: auto;
     margin-right: auto;
-    cursor: pointer;
     padding-bottom: 250px;
 
     @include breakpoint(xl) {   
@@ -176,6 +175,11 @@ $block: ".random-projects";
             @include breakpoint(xl) {   
                 left: 100%;
             } 
+        }        
+        &.fourth.third {        
+            @include breakpoint(xl) {   
+                left: -100%;
+            } 
         }
     }
 
@@ -228,6 +232,11 @@ $block: ".random-projects";
                     }            
                     @include breakpoint(xl) {
                         transform: translate(-38px, -50%) scale(0.7);
+                    } 
+                }                
+                &.fourth.third {    
+                    @include breakpoint(xl) {
+                        transform: translate(38px, -50%) scale(0.7);
                     } 
                 }
             }

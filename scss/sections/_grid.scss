@@ -75,10 +75,16 @@
         overflow: clip;
         width: 300px;
         height: 300px;
+        transform: scale(1);
+        transition: transform 0.3s ease;
 
         @include breakpoint(md) {
             width: 400px;
             height: 400px;
+        }
+
+        &:hover {
+            transform: scale(1.2);
         }
 
         .video {
