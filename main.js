@@ -404,7 +404,7 @@ document.querySelector('#app').innerHTML = `
             <div class="random-projects__content">
                 <h2 class="random-projects__headline">${texts.randomProjects.headline}</h2>
             </div>
-            <p class="random-projects__text">The following projects show some small or bigger experiments that try to desrobe me and helped me to learn Software and to start.</p>
+            <p class="random-projects__text">The following projects showcase a range of small to larger experiments aimed at defining my skills and have aided me in learning software and initiating my journey.</p>
             <div class="random-projects__items">
                 <p class="random-projects__hint">${texts.randomProjects.hint}</p>
                 
