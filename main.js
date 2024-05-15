@@ -130,7 +130,6 @@ const texts = {
         "hint": "click on the tile to toggle sound of the video on/off. And hover for small info."
     },
     "aboutMe": {
-        "text": "<p class='intro'>born 19.06.1990 in Regensburg, Germany</p><h3>Education</h3><div><div class='year'>2014-2017</div><div class='stuff'>Study of Media Technology (M.Sc.) <span>Tu Ilmenau</span></div><div class='description'><span>Thesis topic</span>Development and Evaluation of a Spatial AR Dashboard Personalizable with a Mobile Application</div></div><div><div class='year'>2009-2014</div><div class='stuff'>Study of Media Technology (B.Sc.) <span>Tu Ilmenau</span></div><div class='description'><span>Thesis topic</span>Systematic Analysis of the Distribution Channels of Internet TV Services</div></div><div><div class='year'>2000-2009</div><div class='stuff'>Allgemeine Hochschulreife <span>Albrecht-Altdorfer Gymnasium</span></div><div class='description'>Leistungskurse Mathe und Kunst</div></div><h3>Working experience</h3><div><div class='year'>2022-until now</div><div class='stuff'>Frontend Developer</div></div><div><div class='year'>2018-2022</div><div class='stuff'>Frontend Developer</div></div><h3>Residency and Performances</h3><div><div class='year'>2023</div><div class='stuff'>Artists in Residency</div></div>",
         "textImage": "We all bleed<br>the same color",
         "popupOpen": "about this",
         "popupClose": "close",
@@ -522,8 +521,96 @@ document.querySelector('#app').innerHTML = `
             <div class="about-me__bg-image bg-image" style="background-image: url(${bgGrid});"></div>
             <div class="about-me__col about-me__col--content">
                 <h2 class="about-me__headline">about<span>me</span></h2>
-                <div class="about-me__text">
-                    ${texts.aboutMe.text}
+                <div class="about-me__text"><p class='intro'>born 19.06.1990 in Regensburg, Germany</p>
+                <h3>Education</h3>
+                <div>
+                    <div class='year'>2014-2017</div>
+                    <div class='stuff'>Study of Media Technology (M.Sc.) <span>Tu Ilmenau</span></div>
+                    <div class='description'>
+                        <span>Thesis topic</span>Development and Evaluation of a Spatial AR Dashboard Personalizable with a Mobile Application
+                    </div>
+                </div>
+                <div>
+                    <div class='year'>2009-2014</div>
+                    <div class='stuff'>Study of Media Technology (B.Sc.) <span>Tu Ilmenau</span>
+                    </div>
+                    <div class='description'><span>Thesis topic</span>Systematic Analysis of the Distribution Channels of Internet TV Services</div>
+                </div>
+                <div>
+                    <div class='year'>2000-2009</div>
+                    <div class='stuff'>Allgemeine Hochschulreife <span>Albrecht-Altdorfer Gymnasium</span></div>
+                    <div class='description'>Advanced Course in Mathematics and Art</div>
+                </div>
+                <h3>internships and minijobs</h3>
+                <div>
+                    <div class='year'>2009-2017</div>
+                    <div class='stuff'>Student Assistant at the University<span>Tu Ilmenau</span></div>
+                    <div class='description'>
+                        FG Medienproduktion and Gleichstellungsbüro der TU Ilmenau
+                    </div>
+                </div>
+                <div>
+                    <div class='year'>2014</div>
+                    <div class='stuff'>IEASTE internship <span>Kiew, Ukraine</span>
+                    </div>
+                    <div class='description'>Editorial and design creation of the IAESTE magazine." This involves both the content creation (editorial) and the visual design aspects of producing the magazine for IAESTE, which is the International Association for the Exchange of Students for Technical Experience.</div>
+                </div>
+                <h3>Working experience</h3>
+                    <div>
+                        <div class='year'>2022-until now</div>
+                        <div class='stuff'>Frontend Developer at nexxar, Vienna</div>
+                        <div class='description'>
+                            <ul>
+                                <li>CMS Websites for stock market companies</li>
+                                <li>Introducing and Organising a regular FED Hackathon</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class='year'>2018-2022</div>
+                        <div class='stuff'>Frontend Developer at dotSource, Jena</div>
+                        <div class='description'>
+                            <ul>
+                                <li>Wetechnologies</li>
+                                <li>Scrum</li>
+                                <li>E-Commerce projects with SAP Commerce</li>
+                            </ul>
+                        </div>
+                    </div>
+                <h3>Residency and Performances</h3>
+                <div><div class='year'>2023/24</div>
+                    <div class='description'>
+                        <ul>
+                            <li>03/24 ega Frauntagsfest Projections on House</li>
+                            <li>01/24 Porgy & Bess Performance with EMM</li>
+                            <li>11/23 EMM Release Party, Coco Bar Vienna</li>
+                            <li>11/23 Performance Mapping Rotlicht-Festival Opening, Vienna</li>
+                            <li>10/23 de/semble Festival Closing Concert - live, audioreactive Visuals, Reaktor Vienna</li>
+                            <li>>09/23 EMM at Ankerfabrik Herbstfest, Vienna</li>
+                            <li>08/23 Artists in Residency with EMM at das Lot, Vienna</li>
+                            <li>04/23 EMM at das Coco Bar Vienna - audiovisual Performance</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>Skills</h3>
+                <div>
+                <div class='stuff'>Programming Languages</div>
+                    <div class='description'>
+                        <ul>
+                            <li>Javascript</li><li>Webtechnologies (git, vite, webpack, html/freemarker, css/scss)</li>
+                            <li>First codes with python (but should be more easy to learn after working with javascript for six years)</li><li>at University intro to C# and C++</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                <div class='stuff'>Software</div>
+                    <div class='description'>
+                        <ul>
+                            <li>Touchdesigner</li><li>Adobe Creative Suite</li><li>vsCode | IntelliJ</li><li>Nomad Sculpt</li>
+                            <li>Procreate | Procreate Dreams</li>
+                            <li>AR Spark</li></ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="about-me__col about-me__col--image"> 
