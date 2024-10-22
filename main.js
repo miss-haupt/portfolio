@@ -40,6 +40,8 @@ import poster15 from './assets/images/poster/poster15.jpg';
 import poster16 from './assets/images/poster/poster16.jpg';
 import poster17 from './assets/images/poster/poster17.jpg';
 import poster18 from './assets/images/poster/poster18.jpg';
+import posterkkw from './assets/images/poster/posterkkw.png';
+import posterLot from './assets/images/poster/postLotSummary.png';
 import posterRandomProject1 from './assets/images/poster/posterRandomProject1.jpg';
 import posterRandomProject2 from './assets/images/poster/posterRandomProject2.jpg';
 import posterRandomProject3 from './assets/images/poster/posterRandomProject3.jpg';
@@ -82,6 +84,7 @@ import residencyPuppet from './assets/video/projects/residencyPuppet.mp4';
 import residencyTouchDesigner from './assets/video/projects/residencyUiTest_2.mp4';
 import liveAlt from './assets/video/projects/liveAlt.mp4';
 import herbstfest from './assets/video/projects/herbstfest.mp4';
+import lotSummary from './assets/video/projects/dasLotSummary.mp4';
 
 import videoPorgy from './assets/video/projects/porgy-1.mp4';
 import videoPorgy2 from './assets/video/projects/porgy-2.mp4';
@@ -90,6 +93,7 @@ import puppetExplain from './assets/video/projects/puppetExplain.mp4';
 import vestPreview from './assets/video/projects/vestPreview.mp4';
 import vestExplained from './assets/video/projects/vestExplained.mp4';
 import vestVideo from './assets/video/projects/vestVideo.mp4';
+import kkwVideo from './assets/video/projects/kkw-node-web-2.mp4';
 
 import Navigation from './js/navigation';
 import ExamineOnHover from './js/examine-on-hover';
@@ -194,8 +198,8 @@ document.querySelector('#app').innerHTML = `
 
       <section id="selected-projects" class="section project project--grid-1 project--pupppet-dance" id="puppet-dance">
             <div class="project__bg-image bg-image" style="background-image: url(${bgGrid});"></div>
-            <div class="project__tiles">                
-                <div class="project__tile project__tile-1 popup fullscreen">
+            <div class="project__tiles">        
+            <div class="project__tile project__tile-1 popup fullscreen">
                     <h2 class="project__headline">Artificial <span>fashion</span></h2>
                     <button class="project__button popup__button" type="button" title="show details on click">        
                         <video width="250"  height="250" class="video" muted>
@@ -233,8 +237,42 @@ document.querySelector('#app').innerHTML = `
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>          
                 <div class="project__tile project__tile-2 popup fullscreen">
+                    <h2 class="project__headline">New<span>Season</span></h2>
+                    <button class="project__button popup__button" type="button" title="show details on click">        
+                        
+                         <img class="image" src="${posterkkw}" alt="new season - kkw leipzig masterclass nodeInstitut" loading="lazy"/>
+                    </button>
+                    <div class="popup__content project__popup-content"> 
+                        <div class="popup__content-inner">
+                            <button class="popup__close project__popup-close">${texts.aboutMe.popupClose}</button>
+                            <div class="project__popup-text popup__content-text">
+                                <h3 class="popup__content-headline"><span>New</span>Season</h3>
+                                <p>Projectresult of the Touchdesigner Masterclass Course at the Node Institute. <br>
+                                The result was showcased at the KKW Leipzig. The Task was to create a video for 3min with the topic climate for this venue. 
+                                It was a learning project.<br><br>
+                                </p>
+                                <p>
+                                <strong>Challenges, what i learned, and idea of implementation</strong>
+                                </p>
+                                <ul>
+                                    <li>- doing everything in realtime with Touchdesigner to dive deeper into it</li>
+                                    <li>- connecting to weatherAPI</li>
+                                    <li>- using weather Data recorded for one Year</li>
+                                    <li>- learning L-systems</li>
+                                    <li>- handling this large scale media sizes (resolution 17672px * 2020px )</li>
+                                    <li>- need to optimize the sketch cause of the high resolution</li>
+                                </ul>
+                                <p></p>                       
+                                <video class="project__popup-video popup__content-video" poster="${posterkkw}" preload="none" controls>
+                                    <source src="${kkwVideo}" type="video/mp4" />
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="project__tile project__tile-3 popup fullscreen">
                     <h2 class="project__headline"><span>Puppet</span> dance</h2>
                     <button class="project__button popup__button" type="button" title="show details on click">        
                         <video width="250"  height="250" class="video" muted>
@@ -285,7 +323,7 @@ document.querySelector('#app').innerHTML = `
                         </div>
                     </div>
                 </div>
-                <div class="project__tile project__tile-3 popup fullscreen">
+                <div class="project__tile project__tile-4 popup fullscreen">
                     <h2 class="project__headline">Digital <span>Data inside</span> physical <span>space</span></h2>
                     <button class="project__button popup__button" type="button" title="show details on click">        
                         <video width="250"  height="250" class="video" muted>
@@ -309,6 +347,12 @@ document.querySelector('#app').innerHTML = `
                             <p>The results of these ten days were presented in a one-hour performance, in which all the participating artists took part. The outcome was not only the successful promotion of interdisciplinary work but also an experimentally interesting show and many new learnings.
                                 It took part on the 11th of August 2023 at the Lot in Vienna.
                             </p>
+
+
+                            <video class="project__popup-video popup__content-video" poster="${posterLot}" preload="none" controls>
+                                <source src="${lotSummary}" type="video/mp4" />
+                            </video>
+
                             <div class="popup__content-grid">
                                 <video width="250"  height="250" class="project__popup-video popup__content-video video" poster="${poster7}" preload="none" controls>
                                     <source src="${residencyPuppet}" type="video/mp4" />
@@ -498,6 +542,13 @@ document.querySelector('#app').innerHTML = `
                 <div class="about-me__text"><p class='intro'>born 19.06.1990 in Regensburg, Germany</p>
                 <h3>Education</h3>
                 <div>
+                    <div class='year'>since 10/2024</div>
+                    <div class='stuff'>Study of interface Cultures</div>
+                    <div class='description'>
+                        <span>Master Programme at </span>Kunstuni Linz
+                    </div>
+                </div>
+                <div>
                     <div class='year'>2014-2017</div>
                     <div class='stuff'>Study of Media Technology (M.Sc.) <span>Tu Ilmenau</span></div>
                     <div class='description'>
@@ -555,12 +606,13 @@ document.querySelector('#app').innerHTML = `
                 <div><div class='year'>2023/24</div>
                     <div class='description'>
                         <ul>
+                            <li>09/24 Urhof 20, Residency in Grünbach am Schneeberg</li>
                             <li>03/24 ega Frauntagsfest Projections on House</li>
                             <li>01/24 Porgy & Bess Performance with EMM</li>
                             <li>11/23 EMM Release Party, Coco Bar Vienna</li>
                             <li>11/23 Performance Mapping Rotlicht-Festival Opening, Vienna</li>
                             <li>10/23 de/semble Festival Closing Concert - live, audioreactive Visuals, Reaktor Vienna</li>
-                            <li>>09/23 EMM at Ankerfabrik Herbstfest, Vienna</li>
+                            <li>09/23 EMM at Ankerfabrik Herbstfest, Vienna</li>
                             <li>08/23 Artists in Residency with EMM at das Lot, Vienna</li>
                             <li>04/23 EMM at das Coco Bar Vienna - audiovisual Performance</li>
                         </ul>
